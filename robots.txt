@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# URL de prueba en GitHub Pages. Sustituye por el dominio real al publicar.
+Sitemap: https://jormanj2b.github.io/laborathorno-demo/sitemap.xml

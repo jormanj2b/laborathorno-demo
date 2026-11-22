@@ -1,0 +1,304 @@
+<!doctype html>
+<!--
+  Laborathorno — catálogo v2.
+  Concepto, diseño y desarrollo: Jorman Bravo (propuesta de portafolio, Página Ya, 2026).
+  El catálogo se edita en products.js.
+-->
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6E1A1A">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_VE">
+  <meta property="og:site_name" content="Laborathorno">
+  <meta property="og:image" content="https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Torta, mini postres y pan artesanal de Laborathorno, Caracas">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="Torta, mini postres y pan artesanal de Laborathorno, Caracas">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/oranienbaum-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/montserrat-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <title>Catálogo | Laborathorno — panadería artesanal en Caracas</title>
+  <meta name="description" content="Catálogo de Laborathorno en Chacao, Caracas: panes, bollería, galletas, tortas y mini postres. Mira cada producto, su precio, la cantidad mínima y arma tu pedido por WhatsApp.">
+  <link rel="canonical" href="https://jormanj2b.github.io/laborathorno-demo/catalogo.html">
+  <meta property="og:title" content="Catálogo de Laborathorno">
+  <meta property="og:description" content="Panes, bollería, tortas y mini postres artesanales. Precio, descripción y mínimo de cada producto. Pedidos por WhatsApp.">
+  <meta property="og:url" content="https://jormanj2b.github.io/laborathorno-demo/catalogo.html">
+  <meta name="twitter:title" content="Catálogo de Laborathorno">
+  <meta name="twitter:description" content="Panes, bollería, tortas y mini postres artesanales. Pedidos por WhatsApp.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Laborathorno",
+    "description": "Centro de producción artesanal: panadería, bollería y pastelería en Caracas.",
+    "url": "https://jormanj2b.github.io/laborathorno-demo/",
+    "image": "https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg",
+    "logo": "https://jormanj2b.github.io/laborathorno-demo/images/logo-512.png",
+    "telephone": "+58 424-2015800",
+    "priceRange": "$",
+    "currenciesAccepted": "USD",
+    "servesCuisine": ["Panadería", "Pastelería"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Francisco de Miranda (F5W3+92)",
+      "addressLocality": "Chacao",
+      "addressRegion": "Distrito Capital",
+      "addressCountry": "VE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 10.4959375, "longitude": -66.8474375 },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=10.4959375,-66.8474375",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00", "closes": "20:30"
+    }],
+    "sameAs": ["https://www.instagram.com/laborathorno/"],
+    "potentialAction": { "@type": "OrderAction", "target": "https://wa.me/584242015800" }
+  }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Catálogo de Laborathorno","itemListElement":[{"@type":"ListItem","position":1,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-jamon","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-jamon","name":"Pan de Jamón Tradicional","description":"El clásico de la mesa navideña: jamón, pasas y aceitunas en una masa suave y dorada.","sku":"pan-jamon","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/pan-jamon-tradicional-1.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"20.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-jamon"}}},{"@type":"ListItem","position":2,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mini-pan-jamon","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mini-pan-jamon","name":"Mini Pan de Jamón Tradicional","description":"Nuestra receta tradicional en tamaño individual. Ideal para compartir o regalar.","sku":"mini-pan-jamon","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-pan-jamon-tradicional-1.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"5.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mini-pan-jamon"}}},{"@type":"ListItem","position":3,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mini-pan-mortadela","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mini-pan-mortadela","name":"Mini Pan Navideño Mortadela y Pistacho","description":"Una versión distinta del pan navideño: mortadela y pistacho en masa artesanal.","sku":"mini-pan-mortadela","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-pan-mortadela-pistacho-1.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"6.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mini-pan-mortadela"}}},{"@type":"ListItem","position":4,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-galletas-jengibre","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-galletas-jengibre","name":"Galletas de Jengibre","description":"Galletas especiadas decoradas a mano, empacadas una a una. Perfectas para detalles.","sku":"galletas-jengibre","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/galletas-jengibre.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.80","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-galletas-jengibre"}}},{"@type":"ListItem","position":5,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-navidena","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-navidena","name":"Torta Navideña","description":"Nuestra torta de temporada, pensada para la mesa de diciembre. Disponible en 1 kg o en tamaño mini.","sku":"torta-navidena","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/torta-navidena-1.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"24.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-navidena"}}},{"@type":"ListItem","position":6,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-eventos","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-eventos","name":"Torta para Eventos","description":"Diseñada a la medida de tu celebración. Cuéntanos la ocasión, el sabor y la cantidad de personas.","sku":"torta-eventos","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/torta-eventos-1.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"25.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-eventos"}}},{"@type":"ListItem","position":7,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-cumpleanos","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-cumpleanos","name":"Torta para Cumpleaños","description":"Personalizada con el sabor y la decoración que imagines para ese día especial.","sku":"torta-cumpleanos","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/torta-cumpleanos.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"25.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-torta-cumpleanos"}}},{"@type":"ListItem","position":8,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-hogaza","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-hogaza","name":"Hogaza de Masa Madre","description":"Fermentación lenta, corteza crujiente y miga abierta. Pan de verdad, con tiempo.","sku":"hogaza","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/hogaza-masa-madre.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"5.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-hogaza"}}},{"@type":"ListItem","position":9,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-croissant","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-croissant","name":"Croissant","description":"Laminado a mano con mantequilla: capas finas, crujientes y aireadas.","sku":"croissant","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/croissant.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"3.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-croissant"}}},{"@type":"ListItem","position":10,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-brioche-molde","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-brioche-molde","name":"Brioche de Molde","description":"Miga suave y mantecosa, perfecta para tostadas francesas o desayunos especiales.","sku":"brioche-molde","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/brioche-molde.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"8.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-brioche-molde"}}},{"@type":"ListItem","position":11,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pastel","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pastel","name":"Pastel","description":"Masa hojaldrada y dorada con el relleno que prefieras.","sku":"pastel","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/pastel-ricota-espinaca.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"2.60","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pastel"}}},{"@type":"ListItem","position":12,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-chocolate","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-chocolate","name":"Pan de Chocolate","description":"Masa de croissant con barras de chocolate en su interior.","sku":"pan-chocolate","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/pan-de-chocolate.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"3.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-chocolate"}}},{"@type":"ListItem","position":13,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-multicereal","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-multicereal","name":"Pan Multicereal de Molde","description":"Pan de molde con mezcla de cereales y semillas, ideal para el día a día.","sku":"pan-multicereal","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/pan-multicereal.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"5.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-multicereal"}}},{"@type":"ListItem","position":14,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-triple","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-triple","name":"Cookies Triple Chocolate","description":"Para los que nunca tienen suficiente chocolate: tres tipos en cada galleta.","sku":"cookies-triple","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/cookies-triple-chocolate.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"2.80","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-triple"}}},{"@type":"ListItem","position":15,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-chocolate","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-chocolate","name":"Cookies de Chocolate","description":"La clásica: bordes dorados, centro suave y trozos de chocolate.","sku":"cookies-chocolate","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/cookies-chocolate.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"2.80","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-chocolate"}}},{"@type":"ListItem","position":16,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-brownies","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-brownies","name":"Brownies con Avellanas","description":"Densos, húmedos y con avellanas tostadas en cada bocado.","sku":"brownies","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/brownies-avellanas.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"5.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-brownies"}}},{"@type":"ListItem","position":17,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-macadamia","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-macadamia","name":"Cookies de Macadamia","description":"Galleta de vainilla con nueces de macadamia y chocolate blanco.","sku":"cookies-macadamia","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/cookies-macadamia.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"2.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-macadamia"}}},{"@type":"ListItem","position":18,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-caramelo","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-caramelo","name":"Cookies de Caramelo Salado","description":"El equilibrio perfecto entre dulce y salado.","sku":"cookies-caramelo","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/cookies-caramelo-salado.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"3.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-caramelo"}}},{"@type":"ListItem","position":19,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-avellana","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-avellana","name":"Cookies de Chocolate y Avellana","description":"Masa de cacao intenso con avellanas y chocolate.","sku":"cookies-avellana","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/cookies-chocolate-avellana.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"2.80","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-cookies-avellana"}}},{"@type":"ListItem","position":20,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-muffins-vainilla","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-muffins-vainilla","name":"Muffins de Vainilla","description":"Esponjosos, aromáticos y horneados en su cápsula de papel.","sku":"muffins-vainilla","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/muffins-vainilla.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"6.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-muffins-vainilla"}}},{"@type":"ListItem","position":21,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-perro-batata","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-perro-batata","name":"Pan de Perro de Batata 120 g","description":"Suave y ligeramente dulce gracias a la batata. Ideal para negocios de comida.","sku":"pan-perro-batata","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/pan-perro-batata.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"6.40","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-perro-batata"}}},{"@type":"ListItem","position":22,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-hamburguesa-batata","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-hamburguesa-batata","name":"Pan de Hamburguesa de Batata 130 g","description":"Pan brioche de batata, firme por fuera y tierno por dentro.","sku":"pan-hamburguesa-batata","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/pan-hamburguesa-batata.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"4.80","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-pan-hamburguesa-batata"}}},{"@type":"ListItem","position":23,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-cheesecake-frutos","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-cheesecake-frutos","name":"Mini Cheesecake de Frutos Rojos","description":"Mini cheesecake cremoso con coulis de frutos rojos.","sku":"mp-cheesecake-frutos","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-cheesecake-frutos-rojos.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-cheesecake-frutos"}}},{"@type":"ListItem","position":24,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-shot-cheesecake","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-shot-cheesecake","name":"Shot de Cheesecake","description":"Crema de cheesecake y fresa servida en vasito, lista para mesas de evento.","sku":"mp-shot-cheesecake","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/shot-cheesecake.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-shot-cheesecake"}}},{"@type":"ListItem","position":25,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-quesillo","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-quesillo","name":"Mini Quesillo","description":"El quesillo venezolano de siempre, con su caramelo, en tamaño bocado.","sku":"mp-quesillo","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-quesillo.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-quesillo"}}},{"@type":"ListItem","position":26,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-palmeritas","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-palmeritas","name":"Palmeritas con Chocolate","description":"Hojaldre caramelizado bañado en chocolate.","sku":"mp-palmeritas","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/palmeritas-chocolate.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"0.90","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-palmeritas"}}},{"@type":"ListItem","position":27,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tiramisu","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tiramisu","name":"Tiramisú","description":"Café, mascarpone y cacao en formato bocado.","sku":"mp-tiramisu","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/tiramisu.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.60","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tiramisu"}}},{"@type":"ListItem","position":28,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tres-leches","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tres-leches","name":"Mini Shot de Tres Leches","description":"El clásico tres leches en formato shot, húmedo y coronado con merengue tostado.","sku":"mp-tres-leches","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-shot-tres-leches.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.60","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tres-leches"}}},{"@type":"ListItem","position":29,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tarta-queso","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tarta-queso","name":"Mini Tarta de Queso","description":"Tarta de queso horneada, dorada por fuera y cremosa por dentro.","sku":"mp-tarta-queso","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-tarta-queso.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.20","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tarta-queso"}}},{"@type":"ListItem","position":30,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-milhojas","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-milhojas","name":"Mini Milhojas","description":"Capas de hojaldre crujiente y crema pastelera.","sku":"mp-milhojas","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-milhojas.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"0.80","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-milhojas"}}},{"@type":"ListItem","position":31,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-cheesecake-parchita","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-cheesecake-parchita","name":"Mini Cheesecake de Parchita","description":"Cremoso, con el toque ácido y tropical de la parchita.","sku":"mp-cheesecake-parchita","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-cheesecake-parchita.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-cheesecake-parchita"}}},{"@type":"ListItem","position":32,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tarta-chocolate","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tarta-chocolate","name":"Mini Torta de Chocolate","description":"Bizcocho de chocolate intenso en tamaño individual.","sku":"mp-tarta-chocolate","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-torta-chocolate.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.60","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-tarta-chocolate"}}},{"@type":"ListItem","position":33,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-pie-limon","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-pie-limon","name":"Mini Pie de Limón","description":"Crema de limón fresca sobre base de galleta.","sku":"mp-pie-limon","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-pie-limon.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-mp-pie-limon"}}},{"@type":"ListItem","position":34,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-pavlova","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-pavlova","name":"Mini Pavlova","description":"Merengue crujiente con crema y fruta. Puedes elegir la variedad (mín. 20 por sabor).","sku":"co-pavlova","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-pavlova.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-pavlova"}}},{"@type":"ListItem","position":35,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-tartaleta-fresa","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-tartaleta-fresa","name":"Mini Tartaleta de Fresa","description":"Masa sablé, crema pastelera y fresa fresca.","sku":"co-tartaleta-fresa","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-tartaleta-fresa.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-tartaleta-fresa"}}},{"@type":"ListItem","position":36,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-reinitas","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-reinitas","name":"Reinitas de Corazón","description":"Delicadas galletas en forma de corazón. Puedes elegir la variedad (mín. 20 por sabor).","sku":"co-reinitas","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/reinitas-corazon.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"1.00","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-reinitas"}}},{"@type":"ListItem","position":37,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-pastelitos-queso","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-pastelitos-queso","name":"Pastelitos de Queso","description":"Hojaldre dorado relleno de queso. Un básico para reuniones.","sku":"co-pastelitos-queso","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/pastelitos-queso.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"2.60","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-pastelitos-queso"}}},{"@type":"ListItem","position":38,"url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-mini-cookies","item":{"@type":"Product","@id":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-mini-cookies","name":"Mini Cookies","description":"Galletas en tamaño bocado para coffee breaks. Puedes elegir la variedad (mín. 20 por sabor).","sku":"co-mini-cookies","brand":{"@type":"Brand","name":"Laborathorno"},"image":"https://jormanj2b.github.io/laborathorno-demo/images/mini-cookies.webp","offers":{"@type":"Offer","priceCurrency":"USD","price":"0.50","availability":"https://schema.org/InStock","url":"https://jormanj2b.github.io/laborathorno-demo/catalogo.html#producto-co-mini-cookies"}}}]}</script>
+</head>
+<body>
+  <!-- Sprite de íconos y sello -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <path id="ring-path" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/>
+    </defs>
+    <symbol id="seal" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="98" fill="currentColor"/>
+      <circle cx="100" cy="100" r="88" fill="none" stroke="var(--seal-ink, #FBF4EF)" stroke-width="1.2"/>
+      <circle cx="100" cy="100" r="60" fill="none" stroke="var(--seal-ink, #FBF4EF)" stroke-width="1.2"/>
+      <text fill="var(--seal-ink, #FBF4EF)" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="5.2">
+        <textPath href="#ring-path" startOffset="0">LABORATHORNO · ALMA ARTESANAL ·</textPath>
+      </text>
+      <text x="100" y="124" text-anchor="middle" fill="var(--seal-ink, #FBF4EF)" font-family="Oranienbaum, 'Bodoni Moda', Didot, Georgia, serif" font-size="70">TH</text>
+    </symbol>
+    <symbol id="ic-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+    <symbol id="ic-cart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8Zm4 0V6.5a3 3 0 0 1 6 0V8"/></symbol>
+    <symbol id="ic-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></g></symbol>
+    <symbol id="ic-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="ic-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="ic-close" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="ic-plus" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="ic-minus" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5 12h14"/></symbol>
+    <symbol id="ic-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M9 7V4.5h6V7m-8.5 0 .8 12.2A2 2 0 0 0 9.3 21h5.4a2 2 0 0 0 2-1.8L17.5 7"/></symbol>
+    <symbol id="ic-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></g></symbol>
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  </svg>
+
+  <span id="top"></span>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Laborathorno, ir al inicio">
+        <svg class="brand-seal" aria-hidden="true"><use href="#seal"/></svg>
+        <span class="brand-word">LABOR<b>ATH</b>ORNO</span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#ofrecemos">Ofrecemos</a></li>
+          <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
+          <li><a href="index.html#corporativo">Corporativo</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#visitanos">Visítanos</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" data-wa="¡Hola, Laborathorno! Quiero hacer una consulta." href="https://wa.me/584242015800" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#ic-wa"/></svg> Escríbenos
+        </a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn cart-btn" type="button" data-open-cart aria-controls="cart-drawer" aria-expanded="false">
+          <svg aria-hidden="true"><use href="#ic-cart"/></svg>
+          <span class="visually-hidden">Ver pedido,</span>
+          <span class="cart-count" data-cart-count aria-live="polite">0</span>
+          <span class="visually-hidden">productos distintos</span>
+        </button>
+        <button class="icon-btn menu-btn" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">
+          <span class="menu-lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-hero" aria-labelledby="catalog-title">
+      <div class="pattern-bg" aria-hidden="true"></div>
+      <div class="container">
+        <p class="eyebrow">Hecho bajo pedido</p>
+        <h1 id="catalog-title" class="display">Nuestro catálogo</h1>
+        <p class="lead">Precios en USD por unidad. Entra a cada producto para ver la foto grande, la descripción, la cantidad mínima y añadirlo a tu pedido. Luego lo envías por WhatsApp.</p>
+      </div>
+    </header>
+
+    <section class="section catalog catalog-page" id="catalogo" aria-labelledby="catalog-title">
+      <div class="container">
+        <div class="catalog-tools">
+          <div class="tabs" role="group" aria-label="Filtrar por categoría" data-tabs></div>
+          <div class="search">
+            <label for="search-input" class="visually-hidden">Buscar productos</label>
+            <svg aria-hidden="true"><use href="#ic-search"/></svg>
+            <input id="search-input" type="search" placeholder="Buscar: croissant, cookies, torta…" autocomplete="off">
+          </div>
+        </div>
+
+        <p class="results-info" id="results-info" aria-live="polite"></p>
+        <div class="product-grid" id="product-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <p id="empty-text">No encontramos productos con esa búsqueda.</p>
+          <div class="empty-actions">
+            <button type="button" class="btn btn-primary" id="empty-all" hidden>Ver en todo el catálogo</button>
+            <button type="button" class="btn btn-outline" id="empty-clear" hidden>Limpiar búsqueda</button>
+          </div>
+          <p class="empty-help">¿Buscas algo especial? <a data-wa="¡Hola, Laborathorno! Estoy buscando un producto que no vi en el catálogo." href="https://wa.me/584242015800" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te decimos si lo hacemos.</p>
+        </div>
+        <noscript><p class="empty-state">Para armar tu pedido activa JavaScript, o escríbenos directamente por <a href="https://wa.me/584242015800">WhatsApp al +58 424-2015800</a>.</p></noscript>
+
+        <p class="catalog-note">Los precios son referenciales y pueden variar. Tu pedido se confirma por WhatsApp según disponibilidad y fecha de entrega.</p>
+
+        <details class="past-season">
+          <summary>Temporadas anteriores</summary>
+          <ul id="past-season-list"></ul>
+          <p>Productos de temporada que regresan en su fecha. Pregúntanos por su disponibilidad.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pattern-bg pattern-light" aria-hidden="true"></div>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <svg class="footer-seal" aria-hidden="true"><use href="#seal"/></svg>
+        <p class="footer-word">LABOR<b>ATH</b>ORNO</p>
+        <p>Alma Artesanal · Centro de producción | Panadería | Pastelería</p>
+      </div>
+      <nav aria-label="Secciones">
+        <h2 class="footer-title">Explora</h2>
+        <ul>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html#corporativo">Corporativo</a></li>
+          <li><a href="index.html#nosotros">Quiénes somos</a></li>
+          <li><a href="index.html#visitanos">Horario y ubicación</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <ul>
+          <li><a data-wa="¡Hola, Laborathorno! Quiero hacer una consulta." href="https://wa.me/584242015800" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-wa"/></svg> +58 424-2015800</a></li>
+          <li><a href="https://www.instagram.com/laborathorno/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-ig"/></svg> @laborathorno</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=10.4959375,-66.8474375" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-pin"/></svg> Chacao, Caracas</a></li>
+          <li><span class="footer-plain"><svg aria-hidden="true"><use href="#ic-clock"/></svg> Todos los días, 8:00 a. m. – 8:30 p. m.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> Laborathorno. Todos los derechos reservados.</p>
+      <p><a href="privacidad.html">Política de privacidad</a> · <a href="aviso-legal.html">Aviso legal</a></p>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="product-modal" hidden>
+    <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title" tabindex="-1">
+      <button class="icon-btn pm-close" type="button" data-close-product aria-label="Cerrar ficha del producto">
+        <svg aria-hidden="true"><use href="#ic-close"/></svg>
+      </button>
+      <div class="pm-media" data-pm-media></div>
+      <div class="pm-body" data-pm-body></div>
+    </div>
+  </div>
+
+  <!-- Barra de pedido (móvil) -->
+  <button class="mobile-cart-bar" type="button" data-open-cart aria-controls="cart-drawer" aria-expanded="false" hidden>
+    <span><svg aria-hidden="true"><use href="#ic-cart"/></svg><span class="mcb-label">Ver pedido (<span data-cart-count>0</span>)</span></span>
+    <strong data-cart-total>$0.00</strong>
+  </button>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wa-float" data-wa="¡Hola, Laborathorno! Quiero hacer una consulta." href="https://wa.me/584242015800" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg aria-hidden="true"><use href="#ic-wa"/></svg>
+  </a>
+
+  <!-- Carrito -->
+  <div class="drawer-overlay" data-close-cart hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" tabindex="-1">
+    <div class="drawer-head">
+      <h2 id="cart-title" class="display">Tu pedido</h2>
+      <button class="icon-btn" type="button" data-close-cart aria-label="Cerrar pedido"><svg aria-hidden="true"><use href="#ic-close"/></svg></button>
+    </div>
+    <div class="drawer-body">
+      <div class="cart-empty" id="cart-empty">
+        <svg class="empty-seal" aria-hidden="true"><use href="#seal"/></svg>
+        <p>Tu pedido está vacío.</p>
+        <a class="btn btn-outline" href="catalogo.html" data-close-cart>Ver catálogo</a>
+      </div>
+      <ul class="cart-items" id="cart-items" aria-label="Productos en tu pedido"></ul>
+      <div class="lead-notice" id="lead-notice" role="status" aria-live="polite" hidden>
+        <svg aria-hidden="true"><use href="#ic-clock"/></svg>
+        <div>
+          <p class="lead-kicker">Tiempo estimado de elaboración</p>
+          <p class="lead-text" id="lead-text"></p>
+          <p class="lead-sub" id="lead-sub"></p>
+        </div>
+      </div>
+
+      <form class="cart-form" id="cart-form" novalidate>
+        <h3 class="form-title">Datos del pedido</h3>
+        <div class="field">
+          <label for="f-name">Nombre <span aria-hidden="true">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+          <p class="field-error" id="f-name-err" hidden>Escribe tu nombre para enviar el pedido.</p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-date">Fecha deseada</label>
+            <input id="f-date" name="date" type="date" aria-describedby="f-date-hint f-date-warn">
+          </div>
+          <div class="field">
+            <label for="f-delivery">Entrega</label>
+            <select id="f-delivery" name="delivery">
+              <option>Retiro en tienda</option>
+              <option>Delivery (a coordinar)</option>
+            </select>
+          </div>
+        </div>
+        <p class="field-hint" id="f-date-hint"></p>
+        <p class="field-warn" id="f-date-warn" role="alert" hidden></p>
+        <div class="field">
+          <label for="f-notes">Notas</label>
+          <textarea id="f-notes" name="notes" rows="3" placeholder="Sabores, dedicatoria, hora de retiro, empaque…"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Total referencial</span><strong id="cart-total">$0.00</strong></div>
+      <p class="disclaimer">Precios referenciales en USD. Tu pedido se confirma por WhatsApp (disponibilidad, fecha y forma de pago).</p>
+      <button class="btn btn-wa btn-lg btn-block" type="button" id="send-order" disabled>
+        <svg aria-hidden="true"><use href="#ic-wa"/></svg> Enviar pedido por WhatsApp
+      </button>
+      <div class="foot-links">
+        <button class="link-btn" type="button" id="copy-order">Copiar pedido</button>
+        <button class="link-btn" type="button" id="clear-cart">Vaciar pedido</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="products.js" defer></script>
+  <script src="app.js" defer></script>
+
+</body>
+</html>

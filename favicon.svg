@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="31" fill="#C2603F"/>
+  <circle cx="32" cy="32" r="26.5" fill="none" stroke="#FBF4EF" stroke-width="1.6"/>
+  <text x="32" y="42.5" text-anchor="middle" fill="#FBF4EF" font-family="Didot, 'Bodoni 72', 'Times New Roman', Georgia, serif" font-size="29" font-weight="400" letter-spacing="-.5">TH</text>
+</svg>
