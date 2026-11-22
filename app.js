@@ -434,21 +434,6 @@
     }).join("");
   }
 
-  // mapa bajo demanda
-  var mapWrap = $("#map-wrap"), mapBtn = $("[data-load-map]");
-  if (mapBtn && mapWrap) {
-    mapBtn.addEventListener("click", function () {
-      var iframe = document.createElement("iframe");
-      iframe.title = "Mapa de la ubicación de Laborathorno en Chacao, Caracas";
-      iframe.src = "https://www.google.com/maps?q=10.4959375,-66.8474375&z=17&hl=es&output=embed";
-      iframe.loading = "lazy";
-      iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
-      iframe.allowFullscreen = true;
-      mapWrap.appendChild(iframe);
-      mapWrap.classList.add("is-live");
-    });
-  }
-
   // ---------- carrito ----------
   var drawer = $("#cart-drawer"), overlay = $(".drawer-overlay"), itemsEl = $("#cart-items");
   var emptyEl = $("#cart-empty"), form = $("#cart-form"), totalEl = $("#cart-total");
