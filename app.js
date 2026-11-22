@@ -21,10 +21,6 @@
   }
   function money(n) { return "$" + Number(n).toFixed(2); }
   function norm(s) { return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
-  function isoPlusDays(n) {
-    var d = new Date(); d.setDate(d.getDate() + n);
-    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
-  }
   function waLink(text) { return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text); }
   function icon(id) { return '<svg aria-hidden="true"><use href="#' + id + '"/></svg>'; }
   function unitPrice(p, size) {
@@ -51,7 +47,7 @@
   $all("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
   // ---------- estado del pedido ----------
-  var state = { items: [], form: { name: "", date: "", delivery: "Retiro en tienda", notes: "" } };
+  var state = { items: [], form: { name: "", date: "", window: "", delivery: "Retiro en tienda", notes: "" } };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
     if (saved && Array.isArray(saved.items)) {
@@ -78,6 +74,12 @@
   function cartTotal() { return state.items.reduce(function (s, it) { return s + lineTotal(it); }, 0); }
   function cartCount() { return state.items.reduce(function (s, it) { return s + it.qty; }, 0); }
   function hasUnpriced() { return state.items.some(function (it) { return unitPrice(byId[it.id], it.size) == null; }); }
+  var S = window.LaborathornoSchedule;
+  function now() {
+    if (window.Laborathorno && typeof window.Laborathorno._now === "function") return window.Laborathorno._now();
+    return new Date();
+  }
+
   // ---------- tiempo estimado de elaboración ----------
   // Toma el producto con el rango más largo (mayor maxHours; empate: mayor minHours)
   function leadOf(p) { return { min: p.minHours != null ? p.minHours : 24, max: p.maxHours != null ? p.maxHours : 48 }; }
@@ -97,13 +99,11 @@
     if (l.min >= 48) return (l.min / 24) + "-" + Math.round(l.max / 24) + " días";
     return l.min + "-" + l.max + " h";
   }
-  function minDaysOf(l) { return l ? Math.ceil(l.min / 24) : 0; }
-  function maxDaysOf(l) { return l ? Math.ceil(l.max / 24) : 0; }
-
 
   // ---------- mensaje de WhatsApp ----------
   function formatDate(iso) {
     if (!iso) return "";
+    if (S && S.formatDateEs) return S.formatDateEs(iso);
     var parts = iso.split("-");
     var d = new Date(+parts[0], +parts[1] - 1, +parts[2]);
     try {
@@ -127,7 +127,16 @@
     var est = orderLead(items);
     if (est) lines.push("Tiempo estimado de elaboración: " + leadLabel(est) + " (desde la confirmación)");
     if (form.name) lines.push("Nombre: " + form.name.trim());
-    if (form.date) lines.push("Fecha deseada: " + formatDate(form.date) + (est && form.date < isoPlusDays(minDaysOf(est)) ? " (antes del tiempo estimado, por favor confirmar)" : ""));
+    if (form.date) {
+      var win = form.window && S ? S.windowById(form.window) : null;
+      var dateLine = "Fecha deseada: " + formatDate(form.date) + (win ? ", " + win.label : "");
+      if (est && S) {
+        var first = S.firstAvailable(now(), items, byId);
+        var tooSoon = form.date < first.iso || (form.date === first.iso && win && !S.isWindowAllowed(form.date, win, first.earliest));
+        if (tooSoon) dateLine += " (antes del tiempo estimado, por favor confirmar)";
+      }
+      lines.push(dateLine);
+    }
     if (form.delivery) lines.push("Entrega: " + form.delivery);
     if (form.notes && form.notes.trim()) lines.push("Notas: " + form.notes.trim());
     lines.push("");
@@ -136,7 +145,23 @@
   }
   function buildOrderUrl() { return waLink(buildMessage(state.items, state.form)); }
   // expuesto para pruebas
-  window.Laborathorno = { buildMessage: buildMessage, orderLead: orderLead, leadLabel: leadLabel, buildOrderUrl: buildOrderUrl, state: state, waLink: waLink };
+  window.Laborathorno = {
+    buildMessage: buildMessage,
+    orderLead: orderLead,
+    leadLabel: leadLabel,
+    buildOrderUrl: buildOrderUrl,
+    state: state,
+    waLink: waLink,
+    schedule: S,
+    now: now,
+    setNow: function (d) {
+      if (d == null) { this._now = null; return; }
+      var dt = d instanceof Date ? d : new Date(d);
+      this._now = function () { return new Date(dt.getTime()); };
+    },
+    firstAvailable: function (items) { return S.firstAvailable(now(), items || state.items, byId); },
+    readyMessage: function (items) { return S.readyMessage(now(), items || state.items, byId); }
+  };
 
   // ---------- catálogo ----------
   var grid = $("#product-grid"), tabsEl = $("[data-tabs]"), searchInput = $("#search-input");
@@ -281,10 +306,14 @@
     var im = imgs[i];
     var html = '<img src="' + esc(im.src) + '" alt="' + esc(im.alt || p.name) + '" width="' + (im.w || 800) + '" height="' + (im.h || 600) + '" data-main>';
     if (p.tag) html += '<span class="card-tag">' + esc(p.tag) + "</span>";
-    if (imgs.length > 1) {
-      html += '<div class="pm-thumbs" role="group" aria-label="Fotos de ' + esc(p.name) + '">' + imgs.map(function (img, n) {
-        return '<button type="button" data-photo="' + n + '" aria-label="Ver foto ' + (n + 1) + ' de ' + imgs.length + '" aria-pressed="' + (n === i) + '">' +
-          '<img src="' + esc(img.src) + '" alt="" width="56" height="56">' +
+    var unique = [];
+    imgs.forEach(function (img, n) {
+      if (!unique.some(function (u) { return u.src === img.src; })) unique.push({ src: img.src, index: n });
+    });
+    if (unique.length > 1) {
+      html += '<div class="pm-thumbs" role="group" aria-label="Fotos de ' + esc(p.name) + '">' + unique.map(function (u) {
+        return '<button type="button" data-photo="' + u.index + '" aria-label="Ver foto ' + (u.index + 1) + ' de ' + unique.length + '" aria-pressed="' + (u.index === i) + '">' +
+          '<img src="' + esc(u.src) + '" alt="" width="56" height="56">' +
           "</button>";
       }).join("") + "</div>";
     }
@@ -438,32 +467,88 @@
   var drawer = $("#cart-drawer"), overlay = $(".drawer-overlay"), itemsEl = $("#cart-items");
   var emptyEl = $("#cart-empty"), form = $("#cart-form"), totalEl = $("#cart-total");
   var sendBtn = $("#send-order"), clearBtn = $("#clear-cart"), copyBtn = $("#copy-order"), mobileBar = $(".mobile-cart-bar");
-  var fName = $("#f-name"), fDate = $("#f-date"), fDelivery = $("#f-delivery"), fNotes = $("#f-notes");
+  var fName = $("#f-name"), fDate = $("#f-date"), fWindow = $("#f-window"), fDelivery = $("#f-delivery"), fNotes = $("#f-notes");
   var fNameErr = $("#f-name-err"), dateHint = $("#f-date-hint"), dateWarn = $("#f-date-warn");
   var leadNotice = $("#lead-notice"), leadText = $("#lead-text"), leadSub = $("#lead-sub");
 
   fName.value = state.form.name || ""; fDate.value = state.form.date || "";
+  if (fWindow) fWindow.value = state.form.window || "";
   fDelivery.value = state.form.delivery || "Retiro en tienda"; fNotes.value = state.form.notes || "";
+
+  function fillWindows(iso, earliest, preferFirst) {
+    if (!fWindow || !S) return;
+    var list = S.windowsOn(iso, earliest);
+    var current = state.form.window || fWindow.value;
+    var html = '<option value="" disabled>Elige una franja</option>';
+    list.forEach(function (w) {
+      html += '<option value="' + w.id + '"' + (w.allowed ? "" : " disabled") + ">" + w.label + (w.allowed ? "" : " — no disponible") + "</option>";
+    });
+    fWindow.innerHTML = html;
+    fWindow.disabled = false;
+    var allowed = list.filter(function (w) { return w.allowed; }).map(function (w) { return w.id; });
+    if (!preferFirst && current && allowed.indexOf(current) !== -1) fWindow.value = current;
+    else fWindow.value = allowed[0] || "";
+    state.form.window = fWindow.value;
+  }
+
+  function dateWindowValid() {
+    var est = orderLead();
+    if (!est || !S) return true;
+    var first = S.firstAvailable(now(), state.items, byId);
+    var v = fDate.value;
+    var win = S.windowById(fWindow && fWindow.value);
+    if (!v || v < first.iso) return false;
+    if (!win || !S.isWindowAllowed(v, win, first.earliest)) return false;
+    return true;
+  }
 
   function updateDateRules() {
     var est = orderLead();
     leadNotice.hidden = !est;
-    if (!est) { dateHint.textContent = ""; dateWarn.hidden = true; fDate.removeAttribute("min"); return; }
-    var min = isoPlusDays(minDaysOf(est));
+    if (!est) {
+      dateHint.textContent = "";
+      dateWarn.hidden = true;
+      fDate.removeAttribute("min");
+      fDate.removeAttribute("aria-invalid");
+      if (fWindow) { fWindow.innerHTML = '<option value="">Elige una franja</option>'; fWindow.disabled = true; fWindow.removeAttribute("aria-invalid"); }
+      return;
+    }
+    var first = S.firstAvailable(now(), state.items, byId);
+    var min = first.iso;
     fDate.min = min;
-    leadText.textContent = "Tu pedido estaría listo en " + leadLabel(est) + ".";
-    leadSub.textContent = "Según el producto con mayor tiempo de elaboración (" + est.product.name + "). Fecha más cercana sugerida: " + formatDate(min) + ".";
-    dateHint.textContent = "Elige a partir del " + formatDate(min) + ".";
+    var snapped = false;
+    if (!fDate.value || fDate.value < min) {
+      fDate.value = min;
+      state.form.date = min;
+      snapped = true;
+    }
+    fillWindows(fDate.value, first.earliest, snapped);
+    leadText.textContent = S.readyMessage(now(), state.items, byId);
+    leadSub.textContent = "Según el producto con más tiempo de elaboración (" + est.product.name + "). Horario de retiro: todos los días, 8:00 a. m. – 8:30 p. m. Se confirma por WhatsApp.";
+    dateHint.textContent = "Elige a partir del " + formatDate(min) + " y una franja disponible. El pedido no está listo de inmediato.";
     var v = fDate.value;
-    if (v && v < min) {
+    var win = S.windowById(fWindow && fWindow.value);
+    if (!v || v < min) {
       dateWarn.hidden = false; dateWarn.className = "field-warn is-error"; fDate.setAttribute("aria-invalid", "true");
+      if (fWindow) fWindow.removeAttribute("aria-invalid");
       dateWarn.textContent = "Esa fecha es demasiado pronto: tu pedido necesita " + leadLabel(est) + ". La fecha más cercana es el " + formatDate(min) + ".";
-    } else if (v && v < isoPlusDays(maxDaysOf(est))) {
+    } else if (!win || !S.isWindowAllowed(v, win, first.earliest)) {
+      dateWarn.hidden = false; dateWarn.className = "field-warn is-error";
+      if (fWindow) fWindow.setAttribute("aria-invalid", "true");
+      fDate.removeAttribute("aria-invalid");
+      dateWarn.textContent = "Elige una franja horaria disponible. En esa fecha, las franjas anteriores a la hora de elaboración no están habilitadas.";
+    } else if (v < S.isoFromParts(S.tzParts(new Date(now().getTime() + est.max * 3600000)))) {
       dateWarn.hidden = false; dateWarn.className = "field-warn"; fDate.removeAttribute("aria-invalid");
+      if (fWindow) fWindow.removeAttribute("aria-invalid");
       dateWarn.textContent = "Fecha posible, sujeta a confirmación por WhatsApp según la producción.";
-    } else { dateWarn.hidden = true; fDate.removeAttribute("aria-invalid"); }
+    } else {
+      dateWarn.hidden = true; fDate.removeAttribute("aria-invalid");
+      if (fWindow) fWindow.removeAttribute("aria-invalid");
+    }
   }
 
+
+  if (window.Laborathorno) window.Laborathorno.updateDateRules = updateDateRules;
 
   function renderCart(bump) {
     var count = state.items.length; // productos distintos en el pedido
@@ -522,12 +607,19 @@
     if (parseInt(e.target.value, 10) < p.min) toast("La cantidad mínima de " + p.name + " es " + p.min);
     it.qty = clampQty(e.target.value, p.min); save(); renderCart();
   });
-  [fName, fDate, fDelivery, fNotes].forEach(function (el) {
+  [fName, fDate, fWindow, fDelivery, fNotes].forEach(function (el) {
+    if (!el) return;
     el.addEventListener("input", function () {
       state.form[el.name] = el.value; save();
       if (el === fName && el.value.trim()) { fNameErr.hidden = true; fName.removeAttribute("aria-invalid"); }
-      if (el === fDate) updateDateRules();
+      if (el === fDate || el === fWindow) updateDateRules();
     });
+    if (el === fDate || el === fWindow) {
+      el.addEventListener("change", function () {
+        state.form[el.name] = el.value; save();
+        updateDateRules();
+      });
+    }
   });
   copyBtn.addEventListener("click", function () {
     var text = buildMessage(state.items, state.form);
@@ -552,7 +644,17 @@
       fNameErr.hidden = false; fName.setAttribute("aria-invalid", "true"); fName.focus();
       return;
     }
-    state.form.name = fName.value; save();
+    updateDateRules();
+    if (!dateWindowValid()) {
+      updateDateRules();
+      if (fDate && fDate.getAttribute("aria-invalid") === "true") fDate.focus();
+      else if (fWindow) fWindow.focus();
+      return;
+    }
+    state.form.name = fName.value;
+    state.form.date = fDate.value;
+    if (fWindow) state.form.window = fWindow.value;
+    save();
     var url = buildOrderUrl();
     // En móviles y navegadores internos (Instagram, Facebook, TikTok) window.open puede bloquearse:
     // navegar en la misma pestaña abre la app de WhatsApp de forma fiable. El pedido queda guardado.

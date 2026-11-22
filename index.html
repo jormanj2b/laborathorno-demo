@@ -187,13 +187,13 @@
         <div>
           <p class="eyebrow eyebrow-light">Lo que hacemos</p>
           <h2 id="offer-title" class="display display-light">¿Qué ofrecemos?</h2>
-          <ol class="offer-list-plain">
-            <li><span class="num" aria-hidden="true">01</span>Panadería artesanal</li>
-            <li><span class="num" aria-hidden="true">02</span>Bollería fresca</li>
-            <li><span class="num" aria-hidden="true">03</span>Pastelería y mini bocados</li>
-            <li><span class="num" aria-hidden="true">04</span>Producción para marcas y negocios (B2B)</li>
-            <li><span class="num" aria-hidden="true">05</span>Pedidos personalizados y corporativos</li>
-          </ol>
+          <ul class="offer-list-plain">
+            <li>Panadería artesanal</li>
+            <li>Bollería fresca</li>
+            <li>Pastelería y mini bocados</li>
+            <li>Producción para marcas y negocios (B2B)</li>
+            <li>Pedidos personalizados y corporativos</li>
+          </ul>
         </div>
         <figure class="offer-photo">
           <img src="images/brand/offer-cookies.webp" width="640" height="547" alt="Torre de galletas con chispas de chocolate recién horneadas de Laborathorno" loading="lazy">
@@ -330,7 +330,10 @@
         </div>
         <div class="map-wrap" id="map-wrap">
           <a class="map-fallback" href="https://www.google.com/maps/search/?api=1&amp;query=10.4959375,-66.8474375" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-pin"/></svg> Ver ubicación en Google Maps</a>
-          <iframe title="Mapa de la ubicación de Laborathorno en Chacao, Caracas" src="https://www.google.com/maps?q=10.4959375,-66.8474375&amp;z=17&amp;hl=es&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <div class="map-consent">
+            <p>Para ver el mapa interactivo de Google necesitamos tu permiso para cargar cookies de terceros.</p>
+            <button type="button" class="btn btn-primary" data-accept-cookies>Aceptar cookies para ver el mapa</button>
+          </div>
         </div>
       </div>
     </section>
@@ -365,7 +368,7 @@
     </div>
     <div class="container footer-bottom">
       <p>© <span data-year>2026</span> Laborathorno. Todos los derechos reservados.</p>
-      <p><a href="privacidad.html">Política de privacidad</a> · <a href="aviso-legal.html">Aviso legal</a></p>
+      <p><a href="privacidad.html">Política de privacidad</a> · <a href="cookies.html">Política de cookies</a> · <a href="aviso-legal.html">Aviso legal</a></p>
     </div>
   </footer>
 
@@ -412,22 +415,31 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="f-date">Fecha deseada</label>
-            <input id="f-date" name="date" type="date" aria-describedby="f-date-hint f-date-warn">
+            <label for="f-date">Fecha deseada <span aria-hidden="true">*</span></label>
+            <input id="f-date" name="date" type="date" required aria-describedby="f-date-hint f-date-warn">
           </div>
           <div class="field">
-            <label for="f-delivery">Entrega</label>
-            <select id="f-delivery" name="delivery">
-              <option>Retiro en tienda</option>
-              <option>Delivery (a coordinar)</option>
+            <label for="f-window">Franja horaria <span aria-hidden="true">*</span></label>
+            <select id="f-window" name="window" required aria-describedby="f-date-hint f-date-warn">
+              <option value="">Elige una franja</option>
+              <option value="manana">Mañana (8:00 a. m. – 12:00 m.)</option>
+              <option value="tarde">Tarde (12:00 m. – 4:00 p. m.)</option>
+              <option value="noche">Noche (4:00 p. m. – 8:30 p. m.)</option>
             </select>
           </div>
+        </div>
+        <div class="field">
+          <label for="f-delivery">Entrega</label>
+          <select id="f-delivery" name="delivery">
+            <option>Retiro en tienda</option>
+            <option>Delivery (a coordinar)</option>
+          </select>
         </div>
         <p class="field-hint" id="f-date-hint"></p>
         <p class="field-warn" id="f-date-warn" role="alert" hidden></p>
         <div class="field">
           <label for="f-notes">Notas</label>
-          <textarea id="f-notes" name="notes" rows="3" placeholder="Sabores, dedicatoria, hora de retiro, empaque…"></textarea>
+          <textarea id="f-notes" name="notes" rows="3" placeholder="Sabores, dedicatoria, empaque…"></textarea>
         </div>
       </form>
     </div>
@@ -446,6 +458,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="consent.js" defer></script>
+  <script src="schedule.js" defer></script>
   <script src="products.js" defer></script>
   <script src="app.js" defer></script>
 

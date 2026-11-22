@@ -206,7 +206,7 @@
     </div>
     <div class="container footer-bottom">
       <p>© <span data-year>2026</span> Laborathorno. Todos los derechos reservados.</p>
-      <p><a href="privacidad.html">Política de privacidad</a> · <a href="aviso-legal.html">Aviso legal</a></p>
+      <p><a href="privacidad.html">Política de privacidad</a> · <a href="cookies.html">Política de cookies</a> · <a href="aviso-legal.html">Aviso legal</a></p>
     </div>
   </footer>
 
@@ -263,22 +263,31 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="f-date">Fecha deseada</label>
-            <input id="f-date" name="date" type="date" aria-describedby="f-date-hint f-date-warn">
+            <label for="f-date">Fecha deseada <span aria-hidden="true">*</span></label>
+            <input id="f-date" name="date" type="date" required aria-describedby="f-date-hint f-date-warn">
           </div>
           <div class="field">
-            <label for="f-delivery">Entrega</label>
-            <select id="f-delivery" name="delivery">
-              <option>Retiro en tienda</option>
-              <option>Delivery (a coordinar)</option>
+            <label for="f-window">Franja horaria <span aria-hidden="true">*</span></label>
+            <select id="f-window" name="window" required aria-describedby="f-date-hint f-date-warn">
+              <option value="">Elige una franja</option>
+              <option value="manana">Mañana (8:00 a. m. – 12:00 m.)</option>
+              <option value="tarde">Tarde (12:00 m. – 4:00 p. m.)</option>
+              <option value="noche">Noche (4:00 p. m. – 8:30 p. m.)</option>
             </select>
           </div>
+        </div>
+        <div class="field">
+          <label for="f-delivery">Entrega</label>
+          <select id="f-delivery" name="delivery">
+            <option>Retiro en tienda</option>
+            <option>Delivery (a coordinar)</option>
+          </select>
         </div>
         <p class="field-hint" id="f-date-hint"></p>
         <p class="field-warn" id="f-date-warn" role="alert" hidden></p>
         <div class="field">
           <label for="f-notes">Notas</label>
-          <textarea id="f-notes" name="notes" rows="3" placeholder="Sabores, dedicatoria, hora de retiro, empaque…"></textarea>
+          <textarea id="f-notes" name="notes" rows="3" placeholder="Sabores, dedicatoria, empaque…"></textarea>
         </div>
       </form>
     </div>
@@ -297,6 +306,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="consent.js" defer></script>
+  <script src="schedule.js" defer></script>
   <script src="products.js" defer></script>
   <script src="app.js" defer></script>
 
