@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Sello Laborathorno">
   <defs><path id="r" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
-  <circle cx="100" cy="100" r="98" fill="#C2603F"/>
-  <circle cx="100" cy="100" r="88" fill="none" stroke="#FBF4EF" stroke-width="1.2"/>
-  <circle cx="100" cy="100" r="60" fill="none" stroke="#FBF4EF" stroke-width="1.2"/>
-  <text fill="#FBF4EF" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="5.2"><textPath href="#r">LABORATHORNO · ALMA ARTESANAL ·</textPath></text>
-  <text x="100" y="124" text-anchor="middle" fill="#FBF4EF" font-family="Oranienbaum, Didot, 'Times New Roman', Georgia, serif" font-size="70">TH</text>
+  <circle cx="100" cy="100" r="98" fill="#3C2418"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#F3ECD8" stroke-width="1.2"/>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#F3ECD8" stroke-width="1.2"/>
+  <text fill="#F3ECD8" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="5.2"><textPath href="#r">LABORATHORNO · ALMA ARTESANAL ·</textPath></text>
+  <text x="100" y="124" text-anchor="middle" fill="#F3ECD8" font-family="Oranienbaum, Didot, 'Times New Roman', Georgia, serif" font-size="70">TH</text>
 </svg>

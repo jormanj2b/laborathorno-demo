@@ -41,23 +41,20 @@
     return el;
   }
 
-  function setBannerOffset(on) {
-    var banner = $("#cookie-banner");
-    var h = 0;
-    if (on && banner && !banner.hidden) h = Math.ceil(banner.getBoundingClientRect().height);
-    document.body.classList.toggle("has-cookie-banner", !!h);
-    document.body.style.setProperty("--cookie-offset", h ? h + "px" : "0px");
+  function setBannerClass(on) {
+    document.documentElement.classList.toggle("has-cookie-banner", !!on);
+    document.body.classList.toggle("has-cookie-banner", !!on);
   }
 
   function showBanner() {
     var banner = buildBanner();
     banner.hidden = false;
-    setBannerOffset(true);
+    setBannerClass(true);
   }
   function hideBanner() {
     var banner = $("#cookie-banner");
     if (banner) banner.hidden = true;
-    setBannerOffset(false);
+    setBannerClass(false);
   }
 
   function loadMap() {
@@ -116,9 +113,6 @@
       if (reset) { resetChoice(); }
     });
     apply();
-    window.addEventListener("resize", function () {
-      if (document.body.classList.contains("has-cookie-banner")) setBannerOffset(true);
-    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", onReady);

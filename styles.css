@@ -691,7 +691,10 @@ body.modal-open .wa-float,body.modal-open .mobile-cart-bar{display:none}
   -webkit-mask-image:none;mask-image:none;
 }
 
-/* Aviso de cookies */
+/* Aviso de cookies: position:fixed y espacio reservado en CSS desde el primer pintado (sin medir en JS, para no causar CLS). */
+:root{--cookie-reserve:0px}
+html.has-cookie-banner{--cookie-reserve:128px}
+@media (max-width:767px){html.has-cookie-banner{--cookie-reserve:220px}}
 .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--white);color:var(--dark);border-top:1px solid var(--line);box-shadow:0 -10px 24px -16px rgba(60,36,24,.35);padding:16px 20px calc(16px + env(safe-area-inset-bottom))}
 .cookie-banner[hidden]{display:none!important}
 .cookie-banner-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
@@ -699,11 +702,11 @@ body.modal-open .wa-float,body.modal-open .mobile-cart-bar{display:none}
 .cookie-banner-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .cookie-policy-link{display:inline-flex;align-items:center;min-height:44px;padding:0 .4em;color:var(--brown);font-weight:600;font-size:.92rem;text-decoration:underline}
 .cookie-policy-link:hover{color:var(--brown-deep)}
-body.has-cookie-banner{padding-bottom:var(--cookie-offset,140px)}
-body.has-cookie-banner .wa-float{bottom:calc(var(--cookie-offset,140px) + 16px)}
+html.has-cookie-banner body,body.has-cookie-banner{padding-bottom:var(--cookie-reserve)}
+html.has-cookie-banner .wa-float,body.has-cookie-banner .wa-float{bottom:calc(var(--cookie-reserve) + 16px)}
 @media (max-width:767px){
-  body.has-cookie-banner .mobile-cart-bar{bottom:calc(var(--cookie-offset,140px) + 16px)}
-  body.has-cookie-banner .wa-float{right:14px;bottom:calc(var(--cookie-offset,140px) + 14px)}
+  html.has-cookie-banner .mobile-cart-bar,body.has-cookie-banner .mobile-cart-bar{bottom:calc(var(--cookie-reserve) + 16px)}
+  html.has-cookie-banner .wa-float,body.has-cookie-banner .wa-float{right:14px;bottom:calc(var(--cookie-reserve) + 14px)}
 }
 
 /* Mapa: se carga solo si hay consentimiento */
