@@ -714,3 +714,11 @@ html.has-cookie-banner .wa-float,body.has-cookie-banner .wa-float{bottom:calc(va
 .map-consent p{margin:0;max-width:28ch;font-weight:600;font-size:.95rem;color:var(--dark)}
 .map-consent .btn{white-space:normal}
 .map-wrap.is-live .map-consent,.map-wrap.is-live .map-fallback{display:none}
+/* ronda 2: aviso de cookies alineado con la columna del pie */
+.site-footer>.ck-foot{width:min(1200px,100% - 40px);margin:10px auto 0;position:relative;z-index:2;font-size:.85rem}
+/* ronda 2 (accesibilidad): ningún texto por debajo de 12 px */
+.card-tag,.card-cat,.price small,.ci-min,.lead-kicker,.disclaimer,.pm-cat,.cart-count,.opt-label{font-size:.75rem}
+@media (max-width:767px){.card-tag{font-size:.75rem}.min,.lead-badge{font-size:.75rem}}
+/* ronda 2 (accesibilidad): áreas táctiles de 44 px en el menú */
+@media (min-width:768px){.main-nav a:not(.btn){padding:13px 0}.main-nav a:not(.btn)::after{bottom:8px}}
+.site-footer ul{gap:0}.site-footer ul a{min-height:44px}
