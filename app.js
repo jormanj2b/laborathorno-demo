@@ -20,6 +20,63 @@
     });
   }
   function money(n) { return "$" + Number(n).toFixed(2); }
+  // Validación de campos: ayuda a quien escribe y evita datos raros. La protección de verdad es que
+  // todo lo que escribe el usuario se muestra con textContent, nunca como HTML.
+  var NAME_RE = /^\p{L}(?:[\p{L}\p{M}]|['’ -](?=\p{L}))*$/u;
+  function clean(v) { return String(v || '').normalize('NFC').replace(/[\u0000-\u001F\u007F-\u009F\u200B-\u200F\u2028\u2029\uFEFF]/g, ' ').replace(/\s+/g, ' ').trim(); }
+  function cleanLong(v) { return String(v || '').normalize('NFC').replace(/[\u0000-\u0009\u000B-\u001F\u007F-\u009F\u200B-\u200F\u2028\u2029\uFEFF]/g, '').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim(); }
+  function nameMsg(v, min, max, empty) {
+    if (!v) return empty;
+    if (/[^\p{L}\p{M}\d '’-]/u.test(v)) return 'Usa solo letras, espacios, apóstrofes y guiones (sin símbolos como < > / ; =).';
+    if (/\d/.test(v)) return 'El nombre no puede llevar números.';
+    if (!NAME_RE.test(v)) return 'Usa solo letras, espacios, apóstrofes y guiones.';
+    if (v.length < min) return 'Escribe al menos ' + min + ' letras.';
+    if (v.length > max) return 'Máximo ' + max + ' caracteres.';
+    return '';
+  }
+  function phoneMsg(v, min, short) {
+    if (/(?!^\+)\D/.test(v)) return 'El teléfono solo lleva números (y + al inicio para el código de país).';
+    var d = v.replace(/\D/g, '');
+    if (d.length < min) return short;
+    if (d.length > 15) return 'Sobran dígitos: revisa el número.';
+    return '';
+  }
+  function textMsg(v, max) {
+    if (/[<>]/.test(v)) return 'Sin los signos < y >, por favor.';
+    if (max && v.length > max) return 'Máximo ' + max + ' caracteres.';
+    return '';
+  }
+  function isCharMsg(m) { return /números|Usa solo|solo lleva|solo acepta|signos/.test(m); }
+  // Valida al escribir solo si hay un carácter no permitido (o si el campo ya estaba marcado), y siempre al salir del campo
+  function live(input, rule, show) {
+    input.addEventListener('input', function () { var m = rule(input.value); if (input.getAttribute('aria-invalid') === 'true' || isCharMsg(m)) show(m); });
+    input.addEventListener('blur', function () { if (input.value) show(rule(input.value)); });
+  }
+  // Filtro al escribir o pegar: quita lo que no corresponde al tipo de campo y lo avisa.
+  var FILTERS = {
+    name: [/[^\p{L}\p{M} '’-]/gu, 'Este campo solo acepta letras, espacios, apóstrofes y guiones.'],
+    digits: [/\D/g, 'Este campo solo acepta números.'],
+    phone: [/(?!^\+)\D/g, 'El teléfono solo acepta números (y + al inicio para el código de país).'],
+    user: [/[^A-Za-z0-9._-]/g, 'El usuario solo lleva letras sin acentos, números, puntos y guiones.'],
+    text: [/[<>]/g, 'Los signos < y > no están permitidos.']
+  };
+  function filter(input, kind, show) {
+    input.addEventListener('input', function () {
+      var k = typeof kind === 'function' ? kind() : kind, f = FILTERS[k];
+      if (!f) return;
+      var v = input.value, c = v.replace(f[0], '');
+      if (c === v) return;
+      var pos = Math.max(0, (input.selectionStart || c.length) - (v.length - c.length));
+      input.value = c;
+      try { input.setSelectionRange(pos, pos); } catch (e) {}
+      if (show) show(f[1]);
+    });
+  }
+  // Campos type=number: bloquea e, E, +, -, punto y coma (el navegador sí los deja escribir)
+  function digitsOnlyNumber(input) {
+    input.addEventListener('keydown', function (e) { if (['e', 'E', '+', '-', '.', ','].indexOf(e.key) > -1) e.preventDefault(); });
+    input.addEventListener('paste', function (e) { var t = (e.clipboardData || window.clipboardData).getData('text'); if (/\D/.test(t)) e.preventDefault(); });
+  }
   function norm(s) { return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
   function waLink(text) { return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text); }
   function icon(id) { return '<svg aria-hidden="true"><use href="#' + id + '"/></svg>'; }
@@ -54,7 +111,9 @@
       state.items = saved.items.filter(function (it) { return byId[it.id]; }).map(function (it) {
         it.qty = clampQty(it.qty, byId[it.id].min); return it;
       });
-      if (saved.form) Object.assign(state.form, saved.form);
+      if (saved.form) ["name", "date", "window", "delivery", "notes"].forEach(function (k) {
+        if (typeof saved.form[k] === "string") state.form[k] = saved.form[k].slice(0, k === "notes" ? 300 : 80);
+      });
     }
   } catch (e) { /* almacenamiento no disponible */ }
   function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {} }
@@ -231,9 +290,9 @@
     empty.hidden = list.length > 0;
     if (!list.length) {
       var elsewhere = currentCat !== "todos" && q ? PRODUCTS.filter(function (p) { return matches(p, q); }).length : 0;
-      var raw = esc(searchInput.value.trim());
-      emptyText.innerHTML = elsewhere
-        ? "No hay resultados para “" + raw + "” en " + esc(catName[currentCat]) + ", pero sí en otras categorías."
+      var raw = searchInput.value.trim();
+      emptyText.textContent = elsewhere
+        ? "No hay resultados para “" + raw + "” en " + catName[currentCat] + ", pero sí en otras categorías."
         : q ? "No encontramos productos para “" + raw + "”." : "Por ahora no hay productos en esta categoría.";
       emptyAll.hidden = !elsewhere;
       emptyAll.textContent = "Ver " + elsewhere + (elsewhere === 1 ? " resultado" : " resultados") + " en todo el catálogo";
@@ -607,11 +666,30 @@
     if (parseInt(e.target.value, 10) < p.min) toast("La cantidad mínima de " + p.name + " es " + p.min);
     it.qty = clampQty(e.target.value, p.min); save(); renderCart();
   });
+  // Nombre: solo letras, espacios, apóstrofes y guiones. Notas: sin < >.
+  var nameRule = function (v) { return nameMsg(clean(v), 2, 60, "Escribe tu nombre para enviar el pedido."); };
+  var notesRule = function (v) { return textMsg(cleanLong(v), 300); };
+  var fNotesErr = null;
+  if (fNotes) {
+    fNotesErr = document.createElement("p"); fNotesErr.className = "field-error"; fNotesErr.id = "f-notes-err"; fNotesErr.hidden = true;
+    fNotesErr.setAttribute("aria-live", "polite"); fNotes.insertAdjacentElement("afterend", fNotesErr);
+  }
+  function showField(input, errEl, msg) {
+    errEl.textContent = msg; errEl.hidden = !msg;
+    if (msg) { input.setAttribute("aria-invalid", "true"); input.setAttribute("aria-describedby", errEl.id); } else input.removeAttribute("aria-invalid");
+    return !msg;
+  }
+  if (fName) live(fName, nameRule, function (m) { showField(fName, fNameErr, m); });
+  if (fNotes) live(fNotes, notesRule, function (m) { showField(fNotes, fNotesErr, m); });
+  if (fName) filter(fName, "name", function (m) { showField(fName, fNameErr, m); });
+  if (fNotes) filter(fNotes, "text", function (m) { showField(fNotes, fNotesErr, m); });
+  // Cantidades (type=number del carrito y de la ficha): solo dígitos
+  document.addEventListener("keydown", function (e) { if (e.target.matches && e.target.matches('input[type="number"]') && ["e", "E", "+", "-", ".", ","].indexOf(e.key) > -1) e.preventDefault(); });
+  document.addEventListener("paste", function (e) { if (e.target.matches && e.target.matches('input[type="number"]') && /\D/.test((e.clipboardData || window.clipboardData).getData("text"))) e.preventDefault(); });
   [fName, fDate, fWindow, fDelivery, fNotes].forEach(function (el) {
     if (!el) return;
     el.addEventListener("input", function () {
       state.form[el.name] = el.value; save();
-      if (el === fName && el.value.trim()) { fNameErr.hidden = true; fName.removeAttribute("aria-invalid"); }
       if (el === fDate || el === fWindow) updateDateRules();
     });
     if (el === fDate || el === fWindow) {
@@ -640,10 +718,10 @@
   });
   sendBtn.addEventListener("click", function () {
     if (!state.items.length) return;
-    if (!fName.value.trim()) {
-      fNameErr.hidden = false; fName.setAttribute("aria-invalid", "true"); fName.focus();
-      return;
-    }
+    fName.value = clean(fName.value);
+    if (fNotes) { fNotes.value = cleanLong(fNotes.value); state.form.notes = fNotes.value; }
+    if (!showField(fName, fNameErr, nameRule(fName.value))) { fName.focus(); return; }
+    if (fNotes && !showField(fNotes, fNotesErr, notesRule(fNotes.value))) { fNotes.focus(); return; }
     updateDateRules();
     if (!dateWindowValid()) {
       updateDateRules();
