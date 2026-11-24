@@ -1,0 +1,39 @@
+/* Aviso de cookies · Jorman Bravo. Fijo abajo: no desplaza el contenido (sin CLS). */
+:root{--ck-bg:#fff;--ck-fg:#1d1d1b;--ck-muted:#4a4740;--ck-line:rgba(0,0,0,.14);--ck-accent:#1d1d1b;--ck-on-accent:#fff}
+.ck-banner,.ck-dialog{font:inherit;font-size:.9rem;line-height:1.5;color:var(--ck-fg);background:var(--ck-bg);letter-spacing:normal;text-transform:none}
+.ck-banner{position:fixed;z-index:9990;left:12px;right:12px;bottom:12px;max-width:980px;margin:0 auto;padding:14px 16px calc(14px + env(safe-area-inset-bottom));border:1px solid var(--ck-line);border-radius:14px;box-shadow:0 18px 40px -18px rgba(0,0,0,.45);display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;animation:ck-in .25s ease-out}
+.ck-banner[hidden]{display:none}
+.ck-text{margin:0;flex:1 1 320px;font-size:.875rem}
+.ck-text a,.ck-dialog a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.ck-actions{display:flex;flex-wrap:wrap;gap:8px}
+.ck-btn{font:inherit;font-size:.875rem;font-weight:600;line-height:1.2;min-height:44px;min-width:8.5rem;padding:.6rem 1rem;border-radius:999px;border:2px solid var(--ck-accent);background:var(--ck-accent);color:var(--ck-on-accent);cursor:pointer;flex:1 1 auto}
+.ck-btn:hover{filter:brightness(1.12)}
+.ck-btn:focus-visible,.ck-x:focus-visible,.ck-link:focus-visible,.ck-cat input:focus-visible{outline:3px solid var(--ck-accent);outline-offset:3px}
+.ck-dialog{width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;border:1px solid var(--ck-line);border-radius:16px;padding:22px 20px 18px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.ck-dialog::backdrop{background:rgba(0,0,0,.45)}
+.ck-dialog h2{font:inherit;text-transform:none;letter-spacing:normal;font-size:1.2rem;font-weight:700;margin:0 2.2rem .4rem 0;color:var(--ck-fg)}
+.ck-dialog p{margin:.3rem 0 .8rem;color:var(--ck-muted)}
+.ck-x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--ck-fg);font-size:1.6rem;line-height:1;cursor:pointer}
+.ck-dialog{position:fixed}
+.ck-cats{display:grid;gap:10px;margin:.6rem 0 1rem}
+.ck-cat{border:1px solid var(--ck-line);border-radius:12px;padding:10px 12px}
+.ck-cat p{margin:.25rem 0 0;font-size:.84rem}
+.ck-cat-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ck-cat-head label{font-weight:700;color:var(--ck-fg)}
+.ck-dialog .ck-cat input[type=checkbox]{appearance:none;-webkit-appearance:none;box-sizing:border-box;display:block;width:48px!important;height:28px!important;min-width:0;min-height:0;max-width:none;padding:0!important;margin:0;border:0!important;border-radius:999px;background:#76726a;box-shadow:none;position:relative;cursor:pointer;flex:none;transition:background .15s}
+.ck-dialog .ck-cat input[type=checkbox]::before{content:none}
+.ck-dialog .ck-cat input[type=checkbox]::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.3);transition:transform .15s}
+.ck-dialog .ck-cat input[type=checkbox]:checked{background:var(--ck-accent)}
+.ck-dialog .ck-cat input[type=checkbox]:checked::after{transform:translateX(20px)}
+.ck-dialog .ck-cat input[type=checkbox]:disabled{opacity:.55;cursor:not-allowed}
+.ck-small{font-size:.82rem}
+.ck-foot{margin:.6rem 0 0}
+.ck-link{font:inherit;color:inherit;background:none;border:0;padding:.35rem 0;min-height:24px;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+@keyframes ck-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.ck-banner{animation:none}.ck-dialog .ck-cat input[type=checkbox],.ck-dialog .ck-cat input[type=checkbox]::after{transition:none}}
+@media (max-width:560px){.ck-banner{left:8px;right:8px;bottom:8px;padding:12px}.ck-btn{min-width:0;flex:1 1 30%;padding:.55rem .6rem;font-size:.84rem}}
+/* Página de política de cookies (cuando el sitio no trae estilos legales propios) */
+.ck-policy{max-width:760px;margin:0 auto;padding:2.5rem 1.25rem 4rem;line-height:1.65}
+.ck-policy table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.92rem}
+.ck-policy th,.ck-policy td{border:1px solid var(--ck-line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+.ck-policy code{font-size:.88em;word-break:break-all}
