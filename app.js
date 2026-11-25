@@ -701,7 +701,7 @@
   });
   copyBtn.addEventListener("click", function () {
     var text = buildMessage(state.items, state.form);
-    function done() { toast("Pedido copiado. Pégalo en WhatsApp o en un DM de Instagram."); }
+    function done() { toast("Pedido copiado. Pégalo en un mensaje de WhatsApp."); }
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(done, fallback);
     } else fallback();
