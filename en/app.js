@@ -1,9 +1,9 @@
-/* Laborathorno — catálogo y pedido por WhatsApp (JS vanilla, sin dependencias) */
+/* Hearth & Crumb (demo ficticia) — catálogo y pedido por WhatsApp (JS vanilla, sin dependencias) */
 (function () {
   "use strict";
 
-  var WA_NUMBER = "15125550147";
-  var STORE_KEY = "laborathorno-order-en-v1";
+  var WA_NUMBER = ""; // demo: no real number; wa.me/?text= lets the visitor pick a chat
+  var STORE_KEY = "hearthcrumb-order-v1";
   var CATS = window.CATEGORIES || [];
   var PRODUCTS = window.PRODUCTS || [];
   var byId = {};
@@ -170,7 +170,7 @@
     } catch (e) { return parts[1] + "/" + parts[2] + "/" + parts[0]; }
   }
   function buildMessage(items, form) {
-    var lines = ["Hi Laborathorno! I’d like to place this order:", ""];
+    var lines = ["Hi Hearth & Crumb! I’d like to place this order:", ""];
     items.forEach(function (it) {
       var p = byId[it.id]; if (!p) return;
       var u = unitPrice(p, it.size);

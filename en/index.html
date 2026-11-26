@@ -1,79 +1,80 @@
 <!doctype html>
 <!--
-  Laborathorno — sitio web conceptual v2.
+  Hearth & Crumb — demo ficticia en inglés basada en el sitio conceptual v2.
   Concepto, diseño y desarrollo: Jorman Bravo (propuesta de portafolio, Página Ya, 2026).
-  Marca, fotografías y productos pertenecen a Laborathorno.
+  Negocio, dirección y teléfono ficticios.
   El catálogo se edita en products.js.
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-mgx1gJOHqAfdCs1J1aMMllWGCMWfesEHhWV9CAmurXI=' https://gc.zgo.at; style-src 'self'; font-src 'self'; img-src 'self' data: https://jormanj2b.goatcounter.com; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://jormanj2b.goatcounter.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Zi95ABG3+LDgZWgJyCC/j9h2Ux1lExFHizyGtp0lrHw=' https://gc.zgo.at; style-src 'self'; font-src 'self'; img-src 'self' data: https://jormanj2b.goatcounter.com; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://jormanj2b.goatcounter.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>(function(){try{if(!localStorage.getItem("ck-laborathorno-demo"))document.documentElement.classList.add("has-cookie-banner")}catch(e){document.documentElement.classList.add("has-cookie-banner")}})();</script>
+  <script>(function(){try{if(!localStorage.getItem("ck-hearthcrumb-demo"))document.documentElement.classList.add("has-cookie-banner")}catch(e){document.documentElement.classList.add("has-cookie-banner")}})();</script>
   <meta name="theme-color" content="#3C2418">
   <meta name="format-detection" content="telephone=no">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Laborathorno">
-  <meta property="og:image" content="https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg">
+  <meta property="og:site_name" content="Hearth &amp; Crumb">
+  <meta property="og:image" content="https://jormanj2b.github.io/laborathorno-demo/en/img/og.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Cake, mini desserts and artisan bread from Laborathorno, Caracas">
+  <meta property="og:image:alt" content="Cake, mini desserts and artisan bread from Hearth &amp; Crumb, a bakery in Doral, Florida">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg">
-  <meta name="twitter:image:alt" content="Cake, mini desserts and artisan bread from Laborathorno, Caracas">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <meta name="twitter:image" content="https://jormanj2b.github.io/laborathorno-demo/en/img/og.jpg">
+  <meta name="twitter:image:alt" content="Cake, mini desserts and artisan bread from Hearth &amp; Crumb, a bakery in Doral, Florida">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="preload" href="../fonts/oranienbaum-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/montserrat-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/bodoni-moda-italic-500-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../styles.css?v=2">
-  <title>Laborathorno | Artisan bakery and pastry shop in Caracas</title>
-  <meta name="description" content="Artisan bakery and pastry shop in Chacao, Caracas: sourdough, pastries, cakes and mini desserts. Build your order from the catalog and send it on WhatsApp.">
+  <link rel="stylesheet" href="../styles.css?v=3">
+  <title>Hearth &amp; Crumb | Artisan bakery in Doral, FL</title>
+  <meta name="description" content="Artisan bakery in Doral, Florida: sourdough, pastries, cakes, Venezuelan holiday breads and mini desserts. Build your order from the catalog and send it on WhatsApp.">
   <link rel="canonical" href="https://jormanj2b.github.io/laborathorno-demo/en/">
   <link rel="alternate" hreflang="en" href="https://jormanj2b.github.io/laborathorno-demo/en/">
   <link rel="alternate" hreflang="es" href="https://jormanj2b.github.io/laborathorno-demo/">
-  <meta property="og:title" content="Laborathorno · Handcrafted with soul">
-  <meta property="og:description" content="Handmade bread, pastries and cakes in Caracas. Order single items or in bulk on WhatsApp.">
+  <meta property="og:title" content="Hearth &amp; Crumb · Baked by hand">
+  <meta property="og:description" content="Handmade bread, pastries and cakes in Doral, FL. Order single items or in bulk on WhatsApp.">
   <meta property="og:url" content="https://jormanj2b.github.io/laborathorno-demo/en/">
-  <meta name="twitter:title" content="Laborathorno · Handcrafted with soul">
-  <meta name="twitter:description" content="Handmade bread, pastries and cakes in Caracas. Orders on WhatsApp.">
-  <link rel="preload" as="image" href="../images/hogaza-masa-madre.webp">
+  <meta name="twitter:title" content="Hearth &amp; Crumb · Baked by hand">
+  <meta name="twitter:description" content="Handmade bread, pastries and cakes in Doral, FL. Orders on WhatsApp.">
+  <link rel="preload" as="image" href="img/hogaza-masa-madre.webp">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Bakery",
-    "name": "Laborathorno",
-    "description": "Artisan production bakery: bread, pastries and cakes in Caracas.",
-    "url": "https://jormanj2b.github.io/laborathorno-demo/",
-    "image": "https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg",
-    "logo": "https://jormanj2b.github.io/laborathorno-demo/images/logo-512.png",
-    "telephone": "+1 512-555-0147",
+    "name": "Hearth & Crumb",
+    "description": "Artisan bakery in Doral, Florida: bread, pastries and cakes. Fictional demo business.",
+    "url": "https://jormanj2b.github.io/laborathorno-demo/en/",
+    "image": "https://jormanj2b.github.io/laborathorno-demo/en/img/og.jpg",
+    "logo": "https://jormanj2b.github.io/laborathorno-demo/en/img/logo-512.png",
+    "telephone": "+1-555-014-2290",
     "priceRange": "$",
     "currenciesAccepted": "USD",
     "servesCuisine": ["Bakery", "Pastry"],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Av. Francisco de Miranda (F5W3+92)",
-      "addressLocality": "Chacao",
-      "addressRegion": "Capital District",
-      "addressCountry": "VE"
+      "streetAddress": "8200 NW Example Ave",
+      "addressLocality": "Doral",
+      "addressRegion": "FL",
+      "postalCode": "33166",
+      "addressCountry": "US"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 10.4959375, "longitude": -66.8474375 },
-    "hasMap": "https://www.google.com/maps/search/?api=1&query=10.4959375,-66.8474375",
+    "geo": { "@type": "GeoCoordinates", "latitude": 25.8195, "longitude": -80.3553 },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Doral%2C%20FL",
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       "opens": "08:00", "closes": "20:30"
     }],
-    "potentialAction": { "@type": "OrderAction", "target": "https://wa.me/15125550147" }
+    "potentialAction": { "@type": "OrderAction", "target": "https://jormanj2b.github.io/laborathorno-demo/en/catalog.html" }
   }
   </script>
-  <script src="cookies.js?v=1" defer data-key="laborathorno-demo" data-owner="Laborathorno" data-accent="#3C2418" data-marketing-name="Marketing and third-party content" data-marketing-en="Loads content from other companies that may set their own cookies. Here, that’s the interactive Google Map of our location. We don’t run ads."></script>
+  <script src="cookies.js?v=1" defer data-key="hearthcrumb-demo" data-owner="Hearth &amp; Crumb" data-accent="#3C2418" data-marketing-name="Marketing and third-party content" data-marketing-en="Loads content from other companies that may set their own cookies. Here, that’s the interactive Google Map of our location. We don’t run ads."></script>
 </head>
 <body>
   <!-- Sprite de íconos y sello -->
@@ -86,9 +87,9 @@
       <circle cx="100" cy="100" r="88" fill="none" stroke="var(--seal-ink, #F3ECD8)" stroke-width="1.2"/>
       <circle cx="100" cy="100" r="60" fill="none" stroke="var(--seal-ink, #F3ECD8)" stroke-width="1.2"/>
       <text fill="var(--seal-ink, #F3ECD8)" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="5.2">
-        <textPath href="#ring-path" startOffset="0">LABORATHORNO · MADE WITH SOUL ·</textPath>
+        <textPath href="#ring-path" startOffset="0">HEARTH &amp; CRUMB · BAKED BY HAND ·</textPath>
       </text>
-      <text x="100" y="124" text-anchor="middle" fill="var(--seal-ink, #F3ECD8)" font-family="Oranienbaum, 'Bodoni Moda', Didot, Georgia, serif" font-size="70">TH</text>
+      <text x="100" y="124" text-anchor="middle" fill="var(--seal-ink, #F3ECD8)" font-family="Oranienbaum, 'Bodoni Moda', Didot, Georgia, serif" font-size="50" letter-spacing="-1">H&amp;C</text>
     </symbol>
     <symbol id="ic-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
     <symbol id="ic-cart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8Zm4 0V6.5a3 3 0 0 1 6 0V8"/></symbol>
@@ -108,9 +109,9 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html#top" aria-label="Laborathorno, go to home page">
+      <a class="brand" href="index.html#top" aria-label="Hearth &amp; Crumb, go to home page">
         <svg class="brand-seal" aria-hidden="true"><use href="#seal"/></svg>
-        <span class="brand-word">LABOR<b>ATH</b>ORNO</span>
+        <span class="brand-word">HEARTH <b>&amp;</b> CRUMB</span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Main">
         <ul>
@@ -120,9 +121,9 @@
           <li><a href="index.html#corporativo">Business</a></li>
           <li><a href="index.html#nosotros">About</a></li>
           <li><a href="index.html#visitanos">Visit us</a></li>
-          <li><a class="lang-switch" href="../../" hreflang="es" lang="es">Español</a></li>
+          <li><a class="lang-switch" href="../" hreflang="es" lang="es">Español</a></li>
         </ul>
-        <a class="btn btn-primary nav-cta" data-wa="Hi Laborathorno! I have a question." href="https://wa.me/15125550147" target="_blank" rel="noopener">
+        <a class="btn btn-primary nav-cta" data-wa="Hi Hearth &amp; Crumb! I have a question." href="https://wa.me/" target="_blank" rel="noopener">
           <svg aria-hidden="true"><use href="#ic-wa"/></svg> Message us
         </a>
       </nav>
@@ -145,34 +146,34 @@
       <div class="pattern-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Handcrafted with soul · Production bakery</p>
+          <p class="eyebrow">Baked by hand · Doral, Florida</p>
           <h1 id="hero-title" class="display">Made by hand, <em>baked for you</em></h1>
-          <p class="lead">Artisan bread, pastries and cakes in Chacao, Caracas. Order a single item or a few hundred, for your home, your business or your event.</p>
+          <p class="lead">Artisan bread, pastries and cakes in Doral, Florida. Order a single item or a few hundred, for your home, your business or your event.</p>
           <div class="hero-ctas">
             <a class="btn btn-primary btn-lg" href="catalog.html">See the catalog <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>
-            <a class="btn btn-outline btn-lg" data-wa="Hi Laborathorno! I’d like to place an order." href="https://wa.me/15125550147" target="_blank" rel="noopener">
+            <a class="btn btn-outline btn-lg" data-wa="Hi Hearth &amp; Crumb! I’d like to place an order." href="https://wa.me/" target="_blank" rel="noopener">
               <svg aria-hidden="true"><use href="#ic-wa"/></svg> Order on WhatsApp
             </a>
           </div>
           <ul class="hero-meta">
-            <li><svg aria-hidden="true"><use href="#ic-clock"/></svg> Every day, 8:00 AM – 8:30 PM</li>
-            <li><svg aria-hidden="true"><use href="#ic-pin"/></svg> Av. Francisco de Miranda, Chacao</li>
+            <li><svg aria-hidden="true"><use href="#ic-clock"/></svg> Every day, 8 AM – 8:30 PM</li>
+            <li><svg aria-hidden="true"><use href="#ic-pin"/></svg> 8200 NW Example Ave, Doral</li>
           </ul>
         </div>
         <div class="hero-visual">
           <div class="dots dots-hero" aria-hidden="true"></div>
           <figure class="arch">
-            <img src="../images/hogaza-masa-madre.webp" width="746" height="1000" alt="Hand holding a fresh-baked sourdough loaf" fetchpriority="high">
+            <img src="img/hogaza-masa-madre.webp" width="746" height="1000" alt="Hand holding a fresh-baked sourdough loaf" fetchpriority="high">
           </figure>
           <figure class="hero-bubble">
-            <img src="../images/croissant.webp" width="336" height="384" alt="Golden croissants on paper printed with the Laborathorno logo" decoding="async">
+            <img src="img/croissant.webp" width="336" height="384" alt="Golden croissants on a sheet of baking paper" decoding="async">
           </figure>
           <div class="round-seal seal-hero" aria-hidden="true">
             <svg viewBox="0 0 200 200">
               <defs><path id="rs1" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
               <circle cx="100" cy="100" r="98" class="rs-bg"/>
-              <g class="rs-spin"><text class="rs-text"><textPath href="#rs1">FRESH FROM THE OVEN · HANDMADE IN CARACAS · </textPath></text></g>
-              <text x="100" y="118" text-anchor="middle" class="rs-th">TH</text>
+              <g class="rs-spin"><text class="rs-text"><textPath href="#rs1">FRESH FROM THE OVEN · HANDMADE IN DORAL, FL · </textPath></text></g>
+              <text x="100" y="118" text-anchor="middle" class="rs-th">H&amp;C</text>
             </svg>
           </div>
         </div>
@@ -201,7 +202,7 @@
           </ul>
         </div>
         <figure class="offer-photo">
-          <img src="../images/brand/offer-cookies.webp" width="640" height="547" alt="Stack of fresh-baked Laborathorno chocolate chip cookies" loading="lazy">
+          <img src="../images/brand/offer-cookies.webp" width="640" height="547" alt="Stack of fresh-baked chocolate chip cookies" loading="lazy">
         </figure>
       </div>
     </section>
@@ -231,20 +232,20 @@
         </div>
         <div class="volume-cards">
           <figure>
-            <img src="../images/brand/volume-croissants.webp" width="629" height="829" alt="Flaky croissants with sea salt on a terracotta background, with the message Order more, pay less" loading="lazy">
+            <img src="img/mini-cookies.webp" width="800" height="447" alt="Kraft box filled with rows of assorted mini cookies" loading="lazy">
             <figcaption>Order more, pay less</figcaption>
           </figure>
           <figure>
-            <img src="../images/brand/volume-cookies.webp" width="615" height="829" alt="Stack of chocolate chip cookies with the message Special bulk pricing for events, brands and big tables" loading="lazy">
-            <figcaption>Special bulk pricing</figcaption>
+            <img src="img/cookies-triple-chocolate.webp" width="597" height="800" alt="Stack of triple chocolate cookies balanced on an open hand" loading="lazy">
+            <figcaption>Special pricing for events, brands and big tables</figcaption>
           </figure>
           <figure>
-            <img src="../images/brand/volume-cupcakes.webp" width="583" height="797" alt="Three stacked cupcakes with white frosting and the message Same quality, same handmade process" loading="lazy">
+            <img src="img/pan-multicereal.webp" width="597" height="800" alt="Two multigrain loaves stacked on a hand" loading="lazy">
             <figcaption>Same quality, same handmade process</figcaption>
           </figure>
         </div>
         <div class="volume-cta">
-          <a class="btn btn-cream btn-lg" data-wa="Hi Laborathorno! I’d like a quote for a bulk order." href="https://wa.me/15125550147" target="_blank" rel="noopener">
+          <a class="btn btn-cream btn-lg" data-wa="Hi Hearth &amp; Crumb! I’d like a quote for a bulk order." href="https://wa.me/" target="_blank" rel="noopener">
             <svg aria-hidden="true"><use href="#ic-wa"/></svg> Get a bulk quote
           </a>
         </div>
@@ -255,7 +256,7 @@
       <div class="container corp-grid">
         <figure class="corp-media">
           <div class="dots dots-corp" aria-hidden="true"></div>
-          <img src="../images/caja-regalo-navidad.webp" width="558" height="1000" alt="Laborathorno gift box with Christmas cookies and a red ribbon" loading="lazy">
+          <img src="img/caja-regalo-navidad.webp" width="558" height="1000" alt="Kraft gift box of Christmas cookies tied with a red ribbon" loading="lazy">
         </figure>
         <div class="corp-copy">
           <p class="eyebrow">For companies and events</p>
@@ -271,7 +272,7 @@
           </ul>
           <p class="corp-question">Planning a big order? Message us and we’ll build it around what you need.</p>
           <div class="hero-ctas">
-            <a class="btn btn-primary" data-wa="Hi Laborathorno! I’d like a quote for a corporate or event order." href="https://wa.me/15125550147" target="_blank" rel="noopener">
+            <a class="btn btn-primary" data-wa="Hi Hearth &amp; Crumb! I’d like a quote for a corporate or event order." href="https://wa.me/" target="_blank" rel="noopener">
               <svg aria-hidden="true"><use href="#ic-wa"/></svg> Request a quote
             </a>
             <a class="btn btn-outline" href="catalog.html?cat=corporativo">See corporate products</a>
@@ -286,13 +287,13 @@
         <div class="about-copy">
           <p class="eyebrow eyebrow-light">Our story</p>
           <h2 id="about-title" class="display display-light">Who we are</h2>
-          <p>At <strong>Laborathorno</strong> we believe in things made by hand.</p>
-          <p>We’re a production bakery in Caracas making bread, pastries and desserts the slow, honest way.</p>
+          <p>At <strong>Hearth &amp; Crumb</strong> we believe in things made by hand.</p>
+          <p>We’re a neighborhood bakery in Doral, Florida, baking Venezuelan favorites and everyday classics the slow, honest way.</p>
           <blockquote class="pull-light">We don’t rush. <em>We’d rather get it right.</em></blockquote>
           <p>Every item that leaves our kitchen carries a bit of us: patience, technique and that homemade touch. We’re a team that loves the work, and you can taste it.</p>
         </div>
         <div class="about-wine-media">
-          <img class="about-main" src="../images/pan-mano.webp" width="746" height="1000" alt="Slice of artisan bread held up to the light, showing its open crumb" loading="lazy">
+          <img class="about-main" src="img/pan-mano.webp" width="746" height="1000" alt="Slice of artisan bread held up to the light, showing its open crumb" loading="lazy">
         </div>
       </div>
     </section>
@@ -320,18 +321,18 @@
           <p class="eyebrow">Come see us</p>
           <h2 id="visit-title" class="display">Visit us</h2>
           <dl class="info-list">
-            <div><dt><svg aria-hidden="true"><use href="#ic-clock"/></svg> Hours</dt><dd>Monday to Sunday<br><strong>8:00 a. m. – 8:30 p. m.</strong></dd></div>
-            <div><dt><svg aria-hidden="true"><use href="#ic-pin"/></svg> Address</dt><dd>Av. Francisco de Miranda (F5W3+92)<br>Chacao, Caracas, Venezuela</dd></div>
-            <div><dt><svg aria-hidden="true"><use href="#ic-wa"/></svg> Orders</dt><dd><a data-wa="Hi Laborathorno! I’d like to place an order." href="https://wa.me/15125550147" target="_blank" rel="noopener">+1 512-555-0147</a></dd></div>
+            <div><dt><svg aria-hidden="true"><use href="#ic-clock"/></svg> Hours</dt><dd>Monday to Sunday<br><strong>8 AM – 8:30 PM</strong></dd></div>
+            <div><dt><svg aria-hidden="true"><use href="#ic-pin"/></svg> Address</dt><dd>8200 NW Example Ave<br>Doral, FL 33166 <span class="addr-note">(fictional address)</span></dd></div>
+            <div><dt><svg aria-hidden="true"><use href="#ic-wa"/></svg> Orders (WhatsApp)</dt><dd><a data-wa="Hi Hearth &amp; Crumb! I’d like to place an order." href="https://wa.me/" target="_blank" rel="noopener">(555) 014-2290</a></dd></div>
           </dl>
           <div class="hero-ctas">
-            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=10.4959375,-66.8474375" target="_blank" rel="noopener">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Doral%2C%20FL" target="_blank" rel="noopener">
               <svg aria-hidden="true"><use href="#ic-pin"/></svg> Get directions
             </a>
           </div>
         </div>
         <div class="map-wrap" id="map-wrap">
-          <a class="map-fallback" href="https://www.google.com/maps/search/?api=1&amp;query=10.4959375,-66.8474375" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-pin"/></svg> Open in Google Maps</a>
+          <a class="map-fallback" href="https://www.google.com/maps/search/?api=1&amp;query=Doral%2C%20FL" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-pin"/></svg> Open in Google Maps</a>
           <div class="map-consent">
             <p>To show the interactive Google map, we need your OK to load third-party cookies.</p>
             <button type="button" class="btn btn-primary" data-accept-cookies>Accept cookies to see the map</button>
@@ -346,8 +347,8 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <svg class="footer-seal" aria-hidden="true"><use href="#seal"/></svg>
-        <p class="footer-word">LABOR<b>ATH</b>ORNO</p>
-        <p>Handcrafted with soul · Production bakery | Bread | Pastry</p>
+        <p class="footer-word">HEARTH <b>&amp;</b> CRUMB</p>
+        <p>Baked by hand · Bread · Pastries · Cakes</p>
       </div>
       <nav aria-label="Sections">
         <h2 class="footer-title">Explore</h2>
@@ -361,15 +362,15 @@
       <div>
         <h2 class="footer-title">Contact</h2>
         <ul>
-          <li><a data-wa="Hi Laborathorno! I have a question." href="https://wa.me/15125550147" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-wa"/></svg> +1 512-555-0147</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=10.4959375,-66.8474375" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-pin"/></svg> Chacao, Caracas</a></li>
-          <li><span class="footer-plain"><svg aria-hidden="true"><use href="#ic-clock"/></svg> Every day, 8:00 AM – 8:30 PM</span></li>
+          <li><a data-wa="Hi Hearth &amp; Crumb! I have a question." href="https://wa.me/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-wa"/></svg> (555) 014-2290</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Doral%2C%20FL" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-pin"/></svg> Doral, FL</a></li>
+          <li><span class="footer-plain"><svg aria-hidden="true"><use href="#ic-clock"/></svg> Every day, 8 AM – 8:30 PM</span></li>
         </ul>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>© <span data-year>2026</span> Laborathorno. All rights reserved.</p>
-      <p><a href="privacy.html">Privacy policy</a> · <a href="cookies.html">Cookie policy</a> · <a href="legal.html">Legal notice</a></p>
+      <p>© <span data-year>2026</span> Hearth &amp; Crumb (fictional bakery). Demo site by <a href="https://jormanj2b.github.io/">Jorman Bravo · Web design</a>.</p>
+      <p><a href="privacy.html">Privacy policy</a> · <a href="cookies.html">Cookie policy</a> · <a href="legal.html">Terms of use</a></p>
     </div>
   </footer>
 
@@ -380,7 +381,7 @@
   </button>
 
   <!-- Botón flotante de WhatsApp -->
-  <a class="wa-float" data-wa="Hi Laborathorno! I have a question." href="https://wa.me/15125550147" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
+  <a class="wa-float" data-wa="Hi Hearth &amp; Crumb! I have a question." href="https://wa.me/" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
     <svg aria-hidden="true"><use href="#ic-wa"/></svg>
   </a>
 

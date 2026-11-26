@@ -10,6 +10,6 @@ Concepto, diseño y desarrollo: **Jorman Bravo** (Página Ya, 2026). Marca, foto
 
 ## English version
 
-`en/` holds a native English version (home, catalog, privacy, cookies and legal pages) with English product names, cart, WhatsApp order message, pickup windows (12-hour clock) and cookie notice. It reuses the root CSS, fonts and photos. Both versions have an ES/EN switch in the main menu.
+`en/` is an English demo for US clients, rebranded as **Hearth & Crumb**, a fictional bakery in Doral, FL (made-up address, demo phone (555) 014-2290; WhatsApp buttons open `wa.me/?text=` with no number). It has the home page, catalog, US-style privacy, cookie and terms pages, the cart and English WhatsApp order message, pickup windows in 12-hour Eastern time, and an English cookie notice. Logo-free photo copies live in `en/img/`; CSS, fonts and the remaining photos come from the root. Both versions have an ES/EN switch in the main menu.
 
 **Live:** https://jormanj2b.github.io/laborathorno-demo/en/

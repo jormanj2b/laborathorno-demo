@@ -1,12 +1,12 @@
-/* Laborathorno — mapa de Google solo con permiso de "Marketing y contenido de terceros". El aviso lo pone cookies.js. Autor: Jorman Bravo */
+/* Hearth & Crumb — mapa de Google solo con permiso de "Marketing y contenido de terceros". El aviso lo pone cookies.js. Autor: Jorman Bravo */
 (function () {
-  var MAP_SRC = "https://www.google.com/maps?q=10.4959375,-66.8474375&z=17&hl=en&output=embed";
+  var MAP_SRC = "https://www.google.com/maps?q=Doral,+FL&z=13&hl=en&output=embed";
   function $(sel, rootEl) { return (rootEl || document).querySelector(sel); }
   function loadMap() {
     var wrap = $("#map-wrap");
     if (!wrap || wrap.querySelector("iframe")) return;
     var iframe = document.createElement("iframe");
-    iframe.title = "Map of Laborathorno’s location in Chacao, Caracas";
+    iframe.title = "Map of Doral, Florida, the area of this fictional bakery";
     iframe.src = MAP_SRC;
     iframe.loading = "lazy";
     iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");

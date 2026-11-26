@@ -1,8 +1,8 @@
-/* Laborathorno — fechas y franjas de retiro (America/Caracas). Autor: Jorman Bravo */
+/* Hearth & Crumb — fechas y franjas de retiro (America/New_York). Autor: Jorman Bravo */
 (function (root) {
   "use strict";
 
-  var TZ = "America/Caracas";
+  var TZ = "America/New_York";
   var WINDOWS = [
     { id: "manana", label: "Morning (8 AM – 12 PM)", short: "Morning 8–12", start: 8 * 60, end: 12 * 60 },
     { id: "tarde", label: "Afternoon (12 PM – 4 PM)", short: "Afternoon 12–4", start: 12 * 60, end: 16 * 60 },
@@ -28,7 +28,7 @@
   function isoFromParts(p) { return p.year + "-" + pad(p.month) + "-" + pad(p.day); }
   function minutesOf(p) { return p.hour * 60 + p.minute; }
 
-  // Mediodía en Caracas de una fecha ISO, como instante absoluto (UTC-4).
+  // 16:00 UTC de una fecha ISO (mediodía EDT / 11:00 EST): siempre cae en el mismo día en Doral.
   function instantFromIso(iso) {
     var p = iso.split("-");
     return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 16, 0, 0));
