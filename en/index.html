@@ -1,0 +1,469 @@
+<!doctype html>
+<!--
+  Laborathorno — sitio web conceptual v2.
+  Concepto, diseño y desarrollo: Jorman Bravo (propuesta de portafolio, Página Ya, 2026).
+  Marca, fotografías y productos pertenecen a Laborathorno.
+  El catálogo se edita en products.js.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-mgx1gJOHqAfdCs1J1aMMllWGCMWfesEHhWV9CAmurXI=' https://gc.zgo.at; style-src 'self'; font-src 'self'; img-src 'self' data: https://jormanj2b.goatcounter.com; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://jormanj2b.goatcounter.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){try{if(!localStorage.getItem("ck-laborathorno-demo"))document.documentElement.classList.add("has-cookie-banner")}catch(e){document.documentElement.classList.add("has-cookie-banner")}})();</script>
+  <meta name="theme-color" content="#3C2418">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Laborathorno">
+  <meta property="og:image" content="https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cake, mini desserts and artisan bread from Laborathorno, Caracas">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="Cake, mini desserts and artisan bread from Laborathorno, Caracas">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preload" href="../fonts/oranienbaum-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/montserrat-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/bodoni-moda-italic-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css?v=2">
+  <title>Laborathorno | Artisan bakery and pastry shop in Caracas</title>
+  <meta name="description" content="Artisan bakery and pastry shop in Chacao, Caracas: sourdough, pastries, cakes and mini desserts. Build your order from the catalog and send it on WhatsApp.">
+  <link rel="canonical" href="https://jormanj2b.github.io/laborathorno-demo/en/">
+  <link rel="alternate" hreflang="en" href="https://jormanj2b.github.io/laborathorno-demo/en/">
+  <link rel="alternate" hreflang="es" href="https://jormanj2b.github.io/laborathorno-demo/">
+  <meta property="og:title" content="Laborathorno · Handcrafted with soul">
+  <meta property="og:description" content="Handmade bread, pastries and cakes in Caracas. Order single items or in bulk on WhatsApp.">
+  <meta property="og:url" content="https://jormanj2b.github.io/laborathorno-demo/en/">
+  <meta name="twitter:title" content="Laborathorno · Handcrafted with soul">
+  <meta name="twitter:description" content="Handmade bread, pastries and cakes in Caracas. Orders on WhatsApp.">
+  <link rel="preload" as="image" href="../images/hogaza-masa-madre.webp">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Laborathorno",
+    "description": "Artisan production bakery: bread, pastries and cakes in Caracas.",
+    "url": "https://jormanj2b.github.io/laborathorno-demo/",
+    "image": "https://jormanj2b.github.io/laborathorno-demo/images/og-image.jpg",
+    "logo": "https://jormanj2b.github.io/laborathorno-demo/images/logo-512.png",
+    "telephone": "+58 424-2015800",
+    "priceRange": "$",
+    "currenciesAccepted": "USD",
+    "servesCuisine": ["Bakery", "Pastry"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Francisco de Miranda (F5W3+92)",
+      "addressLocality": "Chacao",
+      "addressRegion": "Capital District",
+      "addressCountry": "VE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 10.4959375, "longitude": -66.8474375 },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=10.4959375,-66.8474375",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00", "closes": "20:30"
+    }],
+    "potentialAction": { "@type": "OrderAction", "target": "https://wa.me/584242015800" }
+  }
+  </script>
+  <script src="cookies.js?v=1" defer data-key="laborathorno-demo" data-owner="Laborathorno" data-accent="#3C2418" data-marketing-name="Marketing and third-party content" data-marketing-en="Loads content from other companies that may set their own cookies. Here, that’s the interactive Google Map of our location. We don’t run ads."></script>
+</head>
+<body>
+  <!-- Sprite de íconos y sello -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <path id="ring-path" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/>
+    </defs>
+    <symbol id="seal" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="98" fill="currentColor"/>
+      <circle cx="100" cy="100" r="88" fill="none" stroke="var(--seal-ink, #F3ECD8)" stroke-width="1.2"/>
+      <circle cx="100" cy="100" r="60" fill="none" stroke="var(--seal-ink, #F3ECD8)" stroke-width="1.2"/>
+      <text fill="var(--seal-ink, #F3ECD8)" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="5.2">
+        <textPath href="#ring-path" startOffset="0">LABORATHORNO · MADE WITH SOUL ·</textPath>
+      </text>
+      <text x="100" y="124" text-anchor="middle" fill="var(--seal-ink, #F3ECD8)" font-family="Oranienbaum, 'Bodoni Moda', Didot, Georgia, serif" font-size="70">TH</text>
+    </symbol>
+    <symbol id="ic-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+    <symbol id="ic-cart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8Zm4 0V6.5a3 3 0 0 1 6 0V8"/></symbol>
+    <symbol id="ic-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="ic-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="ic-close" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="ic-plus" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="ic-minus" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5 12h14"/></symbol>
+    <symbol id="ic-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M9 7V4.5h6V7m-8.5 0 .8 12.2A2 2 0 0 0 9.3 21h5.4a2 2 0 0 0 2-1.8L17.5 7"/></symbol>
+    <symbol id="ic-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></g></symbol>
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  </svg>
+
+  <span id="top"></span>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#top" aria-label="Laborathorno, go to home page">
+        <svg class="brand-seal" aria-hidden="true"><use href="#seal"/></svg>
+        <span class="brand-word">LABOR<b>ATH</b>ORNO</span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#top" aria-current="page">Home</a></li>
+          <li><a href="index.html#ofrecemos">Products</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="index.html#corporativo">Business</a></li>
+          <li><a href="index.html#nosotros">About</a></li>
+          <li><a href="index.html#visitanos">Visit us</a></li>
+          <li><a class="lang-switch" href="../../" hreflang="es" lang="es">Español</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" data-wa="Hi Laborathorno! I have a question." href="https://wa.me/584242015800" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#ic-wa"/></svg> Message us
+        </a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn cart-btn" type="button" data-open-cart aria-controls="cart-drawer" aria-expanded="false">
+          <svg aria-hidden="true"><use href="#ic-cart"/></svg>
+          <span class="visually-hidden">View order,</span>
+          <span class="cart-count" data-cart-count aria-live="polite">0</span>
+          <span class="visually-hidden">different items</span>
+        </button>
+        <button class="icon-btn menu-btn" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
+          <span class="menu-lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="pattern-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Handcrafted with soul · Production bakery</p>
+          <h1 id="hero-title" class="display">Made by hand, <em>baked for you</em></h1>
+          <p class="lead">Artisan bread, pastries and cakes in Chacao, Caracas. Order a single item or a few hundred, for your home, your business or your event.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-lg" href="catalog.html">See the catalog <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+            <a class="btn btn-outline btn-lg" data-wa="Hi Laborathorno! I’d like to place an order." href="https://wa.me/584242015800" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#ic-wa"/></svg> Order on WhatsApp
+            </a>
+          </div>
+          <ul class="hero-meta">
+            <li><svg aria-hidden="true"><use href="#ic-clock"/></svg> Every day, 8:00 AM – 8:30 PM</li>
+            <li><svg aria-hidden="true"><use href="#ic-pin"/></svg> Av. Francisco de Miranda, Chacao</li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <div class="dots dots-hero" aria-hidden="true"></div>
+          <figure class="arch">
+            <img src="../images/hogaza-masa-madre.webp" width="746" height="1000" alt="Hand holding a fresh-baked sourdough loaf" fetchpriority="high">
+          </figure>
+          <figure class="hero-bubble">
+            <img src="../images/croissant.webp" width="336" height="384" alt="Golden croissants on paper printed with the Laborathorno logo" decoding="async">
+          </figure>
+          <div class="round-seal seal-hero" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <defs><path id="rs1" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+              <circle cx="100" cy="100" r="98" class="rs-bg"/>
+              <g class="rs-spin"><text class="rs-text"><textPath href="#rs1">FRESH FROM THE OVEN · HANDMADE IN CARACAS · </textPath></text></g>
+              <text x="100" y="118" text-anchor="middle" class="rs-th">TH</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>Bakery</span><i>✦</i><span>Pastries</span><i>✦</i><span>Pastry</span><i>✦</i><span>Handmade</span><i>✦</i><span>Wholesale for businesses</span><i>✦</i><span>Bulk orders</span><i>✦</i>
+        <span>Bakery</span><i>✦</i><span>Pastries</span><i>✦</i><span>Pastry</span><i>✦</i><span>Handmade</span><i>✦</i><span>Wholesale for businesses</span><i>✦</i><span>Bulk orders</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="section offer-band" id="ofrecemos" aria-labelledby="offer-title">
+      <div class="giant-th giant-th-light" aria-hidden="true"></div>
+      <div class="container offer-band-grid">
+        <div>
+          <p class="eyebrow eyebrow-light">What we make</p>
+          <h2 id="offer-title" class="display display-light">What we offer</h2>
+          <ul class="offer-list-plain">
+            <li>Artisan bread</li>
+            <li>Fresh pastries</li>
+            <li>Cakes and bite-size sweets</li>
+            <li>Wholesale for brands and businesses (B2B)</li>
+            <li>Custom and corporate orders</li>
+          </ul>
+        </div>
+        <figure class="offer-photo">
+          <img src="../images/brand/offer-cookies.webp" width="640" height="547" alt="Stack of fresh-baked Laborathorno chocolate chip cookies" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section featured" id="destacados" aria-labelledby="featured-title">
+      <div class="pattern-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Made to order</p>
+          <h2 id="featured-title" class="display">A few favorites</h2>
+          <p class="section-sub">A sample of what we bake. The full catalog has its own page, with a large photo, price, description and minimum quantity for each item.</p>
+        </div>
+        <div class="product-grid" id="featured-grid"></div>
+        <div class="featured-foot">
+          <a class="btn btn-primary btn-lg" href="catalog.html">See the full catalog <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section volume-gallery" id="volumen" aria-labelledby="volume-title">
+      <div class="dots dots-volume" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-light">Bulk orders</p>
+          <h2 id="volume-title" class="display display-light">Order more, <em>pay less</em></h2>
+          <p class="section-sub">Bulk orders get special pricing, made for events, brands and big tables. Same quality, same handmade process.</p>
+        </div>
+        <div class="volume-cards">
+          <figure>
+            <img src="../images/brand/volume-croissants.webp" width="629" height="829" alt="Flaky croissants with sea salt on a terracotta background, with the message Order more, pay less" loading="lazy">
+            <figcaption>Order more, pay less</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/brand/volume-cookies.webp" width="615" height="829" alt="Stack of chocolate chip cookies with the message Special bulk pricing for events, brands and big tables" loading="lazy">
+            <figcaption>Special bulk pricing</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/brand/volume-cupcakes.webp" width="583" height="797" alt="Three stacked cupcakes with white frosting and the message Same quality, same handmade process" loading="lazy">
+            <figcaption>Same quality, same handmade process</figcaption>
+          </figure>
+        </div>
+        <div class="volume-cta">
+          <a class="btn btn-cream btn-lg" data-wa="Hi Laborathorno! I’d like a quote for a bulk order." href="https://wa.me/584242015800" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#ic-wa"/></svg> Get a bulk quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section corporate" id="corporativo" aria-labelledby="corp-title">
+      <div class="container corp-grid">
+        <figure class="corp-media">
+          <div class="dots dots-corp" aria-hidden="true"></div>
+          <img src="../images/caja-regalo-navidad.webp" width="558" height="1000" alt="Laborathorno gift box with Christmas cookies and a red ribbon" loading="lazy">
+        </figure>
+        <div class="corp-copy">
+          <p class="eyebrow">For companies and events</p>
+          <h2 id="corp-title" class="display">Corporate orders</h2>
+          <p class="lead">We bake for companies that want thoughtful gifts for clients and staff, or good snacks for the office.</p>
+          <ul class="corp-list">
+            <li>Christmas bundles</li>
+            <li>Custom boxes</li>
+            <li>Mini desserts for events</li>
+            <li>Coffee breaks</li>
+            <li>Thank-you gifts</li>
+            <li>Large-volume production</li>
+          </ul>
+          <p class="corp-question">Planning a big order? Message us and we’ll build it around what you need.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" data-wa="Hi Laborathorno! I’d like a quote for a corporate or event order." href="https://wa.me/584242015800" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#ic-wa"/></svg> Request a quote
+            </a>
+            <a class="btn btn-outline" href="catalog.html?cat=corporativo">See corporate products</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-wine" id="nosotros" aria-labelledby="about-title">
+      <div class="giant-th giant-th-light" aria-hidden="true"></div>
+      <div class="container about-wine-grid">
+        <div class="about-copy">
+          <p class="eyebrow eyebrow-light">Our story</p>
+          <h2 id="about-title" class="display display-light">Who we are</h2>
+          <p>At <strong>Laborathorno</strong> we believe in things made by hand.</p>
+          <p>We’re a production bakery in Caracas making bread, pastries and desserts the slow, honest way.</p>
+          <blockquote class="pull-light">We don’t rush. <em>We’d rather get it right.</em></blockquote>
+          <p>Every item that leaves our kitchen carries a bit of us: patience, technique and that homemade touch. We’re a team that loves the work, and you can taste it.</p>
+        </div>
+        <div class="about-wine-media">
+          <img class="about-main" src="../images/pan-mano.webp" width="746" height="1000" alt="Slice of artisan bread held up to the light, showing its open crumb" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section values" aria-labelledby="values-title">
+      <div class="pattern-bg pattern-wine" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Why choose us</p>
+          <h2 id="values-title" class="display">What sets us apart</h2>
+        </div>
+        <ul class="values-list">
+          <li><svg class="v-seal" aria-hidden="true"><use href="#seal"/></svg><h3>Handmade, start to finish</h3><p>We shape every piece by hand and give each dough the time it needs.</p></li>
+          <li><svg class="v-seal" aria-hidden="true"><use href="#seal"/></svg><h3>Quality ingredients</h3><p>We pick ingredients you can taste and feel in the texture.</p></li>
+          <li><svg class="v-seal" aria-hidden="true"><use href="#seal"/></svg><h3>Consistency</h3><p>The same result at 10 units or 1,000, order after order.</p></li>
+          <li><svg class="v-seal" aria-hidden="true"><use href="#seal"/></svg><h3>Flexibility</h3><p>We adjust flavors, sizes and packaging to fit your order.</p></li>
+          <li><svg class="v-seal" aria-hidden="true"><use href="#seal"/></svg><h3>Transparency</h3><p>Clear prices, honest lead times and direct contact with us.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section visit" id="visitanos" aria-labelledby="visit-title">
+      <div class="container visit-grid">
+        <div class="visit-copy">
+          <p class="eyebrow">Come see us</p>
+          <h2 id="visit-title" class="display">Visit us</h2>
+          <dl class="info-list">
+            <div><dt><svg aria-hidden="true"><use href="#ic-clock"/></svg> Hours</dt><dd>Monday to Sunday<br><strong>8:00 a. m. – 8:30 p. m.</strong></dd></div>
+            <div><dt><svg aria-hidden="true"><use href="#ic-pin"/></svg> Address</dt><dd>Av. Francisco de Miranda (F5W3+92)<br>Chacao, Caracas, Venezuela</dd></div>
+            <div><dt><svg aria-hidden="true"><use href="#ic-wa"/></svg> Orders</dt><dd><a data-wa="Hi Laborathorno! I’d like to place an order." href="https://wa.me/584242015800" target="_blank" rel="noopener">+58 424-2015800</a></dd></div>
+          </dl>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=10.4959375,-66.8474375" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#ic-pin"/></svg> Get directions
+            </a>
+          </div>
+        </div>
+        <div class="map-wrap" id="map-wrap">
+          <a class="map-fallback" href="https://www.google.com/maps/search/?api=1&amp;query=10.4959375,-66.8474375" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-pin"/></svg> Open in Google Maps</a>
+          <div class="map-consent">
+            <p>To show the interactive Google map, we need your OK to load third-party cookies.</p>
+            <button type="button" class="btn btn-primary" data-accept-cookies>Accept cookies to see the map</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pattern-bg pattern-light" aria-hidden="true"></div>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <svg class="footer-seal" aria-hidden="true"><use href="#seal"/></svg>
+        <p class="footer-word">LABOR<b>ATH</b>ORNO</p>
+        <p>Handcrafted with soul · Production bakery | Bread | Pastry</p>
+      </div>
+      <nav aria-label="Sections">
+        <h2 class="footer-title">Explore</h2>
+        <ul>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="index.html#corporativo">Business</a></li>
+          <li><a href="index.html#nosotros">About us</a></li>
+          <li><a href="index.html#visitanos">Hours & location</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contact</h2>
+        <ul>
+          <li><a data-wa="Hi Laborathorno! I have a question." href="https://wa.me/584242015800" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-wa"/></svg> +58 424-2015800</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=10.4959375,-66.8474375" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-pin"/></svg> Chacao, Caracas</a></li>
+          <li><span class="footer-plain"><svg aria-hidden="true"><use href="#ic-clock"/></svg> Every day, 8:00 AM – 8:30 PM</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> Laborathorno. All rights reserved.</p>
+      <p><a href="privacy.html">Privacy policy</a> · <a href="cookies.html">Cookie policy</a> · <a href="legal.html">Legal notice</a></p>
+    </div>
+  </footer>
+
+  <!-- Barra de pedido (móvil) -->
+  <button class="mobile-cart-bar" type="button" data-open-cart aria-controls="cart-drawer" aria-expanded="false" hidden>
+    <span><svg aria-hidden="true"><use href="#ic-cart"/></svg><span class="mcb-label">View order (<span data-cart-count>0</span>)</span></span>
+    <strong data-cart-total>$0.00</strong>
+  </button>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wa-float" data-wa="Hi Laborathorno! I have a question." href="https://wa.me/584242015800" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
+    <svg aria-hidden="true"><use href="#ic-wa"/></svg>
+  </a>
+
+  <!-- Carrito -->
+  <div class="drawer-overlay" data-close-cart hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" tabindex="-1">
+    <div class="drawer-head">
+      <h2 id="cart-title" class="display">Your order</h2>
+      <button class="icon-btn" type="button" data-close-cart aria-label="Close order"><svg aria-hidden="true"><use href="#ic-close"/></svg></button>
+    </div>
+    <div class="drawer-body">
+      <div class="cart-empty" id="cart-empty">
+        <svg class="empty-seal" aria-hidden="true"><use href="#seal"/></svg>
+        <p>Your order is empty.</p>
+        <a class="btn btn-outline" href="catalog.html" data-close-cart>See the catalog</a>
+      </div>
+      <ul class="cart-items" id="cart-items" aria-label="Items in your order"></ul>
+      <div class="lead-notice" id="lead-notice" role="status" aria-live="polite" hidden>
+        <svg aria-hidden="true"><use href="#ic-clock"/></svg>
+        <div>
+          <p class="lead-kicker">Estimated prep time</p>
+          <p class="lead-text" id="lead-text"></p>
+          <p class="lead-sub" id="lead-sub"></p>
+        </div>
+      </div>
+
+      <form class="cart-form" id="cart-form" novalidate>
+        <h3 class="form-title">Order details</h3>
+        <div class="field">
+          <label for="f-name">Name <span aria-hidden="true">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60" pattern="\p{L}(?:[\p{L}\p{M}]|[' ’\-](?=\p{L}))*" spellcheck="false" aria-describedby="f-name-err">
+          <p class="field-error" id="f-name-err" aria-live="polite" hidden>Enter your name to send the order.</p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-date">Preferred date <span aria-hidden="true">*</span></label>
+            <input id="f-date" name="date" type="date" required aria-describedby="f-date-hint f-date-warn">
+          </div>
+          <div class="field">
+            <label for="f-window">Time window <span aria-hidden="true">*</span></label>
+            <select id="f-window" name="window" required aria-describedby="f-date-hint f-date-warn">
+              <option value="">Choose a time window</option>
+              <option value="manana">Morning (8 AM – 12 PM)</option>
+              <option value="tarde">Afternoon (12 PM – 4 PM)</option>
+              <option value="noche">Evening (4 PM – 8:30 PM)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-delivery">Delivery</label>
+          <select id="f-delivery" name="delivery">
+            <option>In-store pickup</option>
+            <option>Delivery (we’ll arrange it)</option>
+          </select>
+        </div>
+        <p class="field-hint" id="f-date-hint"></p>
+        <p class="field-warn" id="f-date-warn" role="alert" hidden></p>
+        <div class="field">
+          <label for="f-notes">Notes</label>
+          <textarea id="f-notes" name="notes" rows="3" maxlength="300" placeholder="Flavors, a message on the cake, packaging…"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Estimated total</span><strong id="cart-total">$0.00</strong></div>
+      <p class="disclaimer">Prices are estimates in USD. We confirm your order on WhatsApp (availability, date and payment method).</p>
+      <button class="btn btn-wa btn-lg btn-block" type="button" id="send-order" disabled>
+        <svg aria-hidden="true"><use href="#ic-wa"/></svg> Send order on WhatsApp
+      </button>
+      <div class="foot-links">
+        <button class="link-btn" type="button" id="copy-order">Copy order</button>
+        <button class="link-btn" type="button" id="clear-cart">Clear order</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="consent.js" defer></script>
+  <script src="schedule.js" defer></script>
+  <script src="products.js" defer></script>
+  <script src="app.js" defer></script>
+
+<script data-goatcounter="https://jormanj2b.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
