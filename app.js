@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  var WA_NUMBER = "584242015800";
+  var WA_NUMBER = "15125550147";
   var STORE_KEY = "laborathorno-pedido-v1";
   var CATS = window.CATEGORIES || [];
   var PRODUCTS = window.PRODUCTS || [];
